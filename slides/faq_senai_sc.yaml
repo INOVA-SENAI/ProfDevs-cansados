@@ -1,0 +1,37 @@
+nome: FAQ SENAI Santa Catarina
+
+slides:
+  - tipo: capa
+    titulo: Sistema de Dúvidas Frequentes - FAQ
+
+  - tipo: divisoria
+    titulo: O que é FAQ?
+
+  - tipo: conteudo
+    titulo: Conceito e benefícios
+    topicos:
+      - "FAQ significa: Frequently Asked Questions"
+      - Centraliza as dúvidas mais comuns dos alunos
+      - Acesso rápido a respostas sem aguardar atendimento
+      - Reduz repetição de perguntas iguais
+
+  - tipo: conteudo
+    titulo: Como funciona o FAQ do SENAI
+    topicos:
+      - Base de dados com perguntas organizadas por categorias
+      - Buscador rápido por palavra-chave
+      - Respostas claras e objetivas
+    destaque: Menos tempo esperando, mais tempo aprendendo.
+
+  - tipo: divisoria
+    titulo: Usando o FAQ
+
+  - tipo: conteudo
+    titulo: Passo a passo
+    topicos:
+      - Acesse o portal do SENAI Santa Catarina
+      - Procure pela seção "Dúvidas Frequentes" ou "FAQ"
+      - Digite sua pergunta no buscador ou navegue por categoria
+      - Leia a resposta e consulte links relacionados se necessário
+
+  - tipo: encerramento

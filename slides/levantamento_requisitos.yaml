@@ -1,0 +1,114 @@
+nome: Levantamento de Requisitos
+
+slides:
+  - tipo: capa
+    titulo: Levantamento de Requisitos e Análise
+
+  - tipo: divisoria
+    titulo: O que são requisitos?
+
+  - tipo: conteudo
+    titulo: Conceito e propósito
+    topicos:
+      - Representam aquilo que o sistema precisa atender
+      - Respondem perguntas sobre funcionalidades, usuários e regras
+      - Evitam retrabalho e erros na programação
+    destaque: Um sistema bem desenvolvido começa com um problema bem entendido.
+
+  - tipo: conteudo
+    titulo: Transformando ideias em requisitos
+    topicos:
+      - "Ideia: Professor precisa reservar um laboratório"
+      - "Requisito: O sistema deve permitir reserva de laboratórios"
+      - Requisitos guiam o desenvolvimento
+
+  - tipo: divisoria
+    titulo: Tipos de requisitos
+
+  - tipo: conteudo
+    titulo: Requisito Funcional
+    topicos:
+      - Descreve uma função ou ação do sistema
+      - "Verbos: cadastrar, consultar, alterar, excluir, reservar"
+      - "Pergunta: O que o sistema precisa fazer?"
+
+  - tipo: conteudo
+    titulo: Requisito Não Funcional
+    topicos:
+      - Descreve qualidades do sistema
+      - "Envolve: desempenho, segurança, compatibilidade"
+      - "Exemplo: responder em 3 segundos, funcionar em celulares"
+
+  - tipo: conteudo
+    titulo: Regra de Negócio
+    topicos:
+      - Regra da organização que deve ser respeitada
+      - Define condições e limites
+      - "Exemplo: máximo 3 reservas por aluno, não haver conflito de horário"
+
+  - tipo: divisoria
+    titulo: Atores
+
+  - tipo: conteudo
+    titulo: O que é um ator?
+    topicos:
+      - Quem ou o que interage com o sistema
+      - "Pode ser: pessoa, outro sistema, serviço externo"
+      - Deve existir interação com o sistema
+
+  - tipo: conteudo
+    titulo: Ator versus Elemento do Sistema
+    topicos:
+      - "Atores: Professor, Coordenador, Sistema de autenticação"
+      - "Não são atores: Laboratório, Reserva, Banco de dados"
+      - "Regra: ator interage com o sistema"
+
+  - tipo: divisoria
+    titulo: Casos de Uso
+
+  - tipo: conteudo
+    titulo: Definição e propósito
+    topicos:
+      - Funcionalidade oferecida para um ator
+      - "Descreve: quem usa, o que deseja, que serviço oferece"
+      - "Exemplos: Professor realiza Reserva, Coordenador cancela Reserva"
+
+  - tipo: conteudo
+    titulo: Componentes do diagrama
+    topicos:
+      - "Ator - pessoa estilizada"
+      - "Caso de uso - elipse"
+      - "Associação - linha ligando ator e funcionalidade"
+
+  - tipo: conteudo
+    titulo: Relação include
+    topicos:
+      - Comportamento obrigatório sempre executado
+      - "Exemplo: Realizar Reserva sempre verifica disponibilidade"
+      - "Include - reutilização obrigatória"
+
+  - tipo: divisoria
+    titulo: Diagrama de Atividades
+
+  - tipo: conteudo
+    titulo: Propósito e utilidade
+    topicos:
+      - Representa um processo passo a passo
+      - Visualiza sequência, decisões, caminhos alternativos
+      - Essencial para compreender fluxos complexos
+
+  - tipo: conteudo
+    titulo: Principais elementos
+    topicos:
+      - "Início - marca o começo do processo"
+      - "Atividade - representa uma ação"
+      - "Fluxo - mostra a sequência"
+
+  - tipo: conteudo
+    titulo: Decisões e caminhos
+    topicos:
+      - "Decisão - quando o fluxo segue caminhos diferentes"
+      - "Principal - processo acontece normalmente"
+      - "Alternativo ou exceção - casos especiais"
+
+  - tipo: encerramento

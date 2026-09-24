@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Caça-segredos",
+      "trigger": "PostTaskExecution",
+      "action": {
+        "type": "command",
+        "command": "python scripts/caca_segredos.py"
+      },
+      "timeout": 60
+    }
+  ]
+}
