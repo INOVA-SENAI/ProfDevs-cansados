@@ -7,3 +7,5 @@ __pycache__/
 # Imagens geradas
 outputs/*
 !outputs/.gitkeep
+mcp_imagem/outputs/*
+!mcp_imagem/outputs/.gitkeep

@@ -17,8 +17,12 @@ ProfDevs-cansados/
 ├── prompts/            # Módulo que monta o prompt padronizado de "slide"
 ├── outputs/            # Imagens geradas (gitignored)
 ├── tests/              # Testes automatizados (pytest)
+├── mcp_imagem/         # Servidor MCP de imagens 8bit/pixel art (mesmo padrão: prompts/, app/, tests/, outputs/)
 └── README.md
 ```
+
+### `mcp_imagem/`
+Servidor MCP independente do app de slides, com o mesmo padrão de pastas. `server.py` é o ponto de entrada. `assets/estilos/` guarda a imagem de referência de cada estilo, e é por ela que se troca o visual de um estilo. Tem `venv/`, `.env` e testes próprios. Rode tudo de dentro da pasta.
 
 ## Descrição dos Diretórios
 

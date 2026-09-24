@@ -1,0 +1,6 @@
+mcp>=2.2,<3
+boto3[crt]>=1.41  # [crt] permite usar o login do `aws login`
+pillow
+python-dotenv
+pytest
+ruff

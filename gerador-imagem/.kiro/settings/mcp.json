@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "aws-knowledge-mcp-server": {
+      "url": "https://knowledge-mcp.global.api.aws",
+      "type": "http",
+      "disabled": false
+    },
+    "gerador-imagem": {
+      "command": "mcp_imagem/venv/bin/python",
+      "args": ["mcp_imagem/server.py"],
+      "disabled": false
+    }
+  }
+}
