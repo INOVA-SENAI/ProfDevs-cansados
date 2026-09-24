@@ -28,7 +28,7 @@ Use linguagem clara: "O sistema DEVE...", "O usuário PODE...", "NÃO É necess�
 - [ ] RF03 - O sistema DEVE montar um prompt final padronizado, combinando o prompt do usuário com as regras do tipo escolhido definidas em `.kiro/steering/identidade-visual.md` (paleta, tipografia, layout)
 - [ ] RF04 - O prompt DEVE instruir a IA a deixar livre a área do logo e NÃO desenhar logotipo
 - [ ] RF05 - O sistema DEVE chamar a API de geração de imagem da OpenAI com o prompt final
-- [ ] RF06 - O sistema DEVE sobrepor o logo oficial (`assets/senai/`) na posição correta do tipo de slide: branco no canto superior esquerdo (Capa), azul no canto superior direito (Conteúdo/Divisória)
+- [ ] RF06 - O sistema DEVE sobrepor o logo oficial (`senai/`) na posição correta do tipo de slide: branco no canto superior esquerdo (Capa), azul no canto superior direito (Conteúdo/Divisória)
 - [ ] RF07 - O sistema DEVE exibir a imagem final na tela
 - [ ] RF08 - O usuário PODE baixar a imagem final em PNG
 

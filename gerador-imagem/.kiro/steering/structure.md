@@ -7,39 +7,32 @@ inclusion: always
 ## Visão Geral
 
 ```
-ProfDevs-cansados/
+gerador-imagem/
 ├── .kiro/              # Configurações e diretrizes do Kiro
 │   ├── steering/       # Arquivos de contexto e padrões do projeto
-│   ├── hooks/          # Automações e gatilhos do agente
+│   ├── settings/       # mcp.json: MCPs do workspace
 │   └── specs/          # Especificações de features
-├── assets/senai/       # Logos oficiais, barra lateral e modelo PDF do SENAI
-├── app/                # App Streamlit (main.py, chamada à API de imagem)
-├── prompts/            # Módulo que monta o prompt padronizado de "slide"
-├── outputs/            # Imagens geradas (gitignored)
-├── tests/              # Testes automatizados (pytest)
-├── mcp_imagem/         # Servidor MCP de imagens 8bit/pixel art (mesmo padrão: prompts/, app/, tests/, outputs/)
+├── .mcp.json           # MCPs do projeto no Claude Code
+├── senai/              # Logos oficiais, barra lateral e modelo PDF do SENAI
+├── mcp_imagem/         # Servidor MCP de imagens 8bit/pixel art
 └── README.md
 ```
 
-### `mcp_imagem/`
-Servidor MCP independente do app de slides, com o mesmo padrão de pastas. `server.py` é o ponto de entrada. `assets/estilos/` guarda a imagem de referência de cada estilo, e é por ela que se troca o visual de um estilo. Tem `venv/`, `.env` e testes próprios. Rode tudo de dentro da pasta.
+O app de slides (spec `geracao-slide.md`) ainda não tem código. Quando for escrito, segue o mesmo padrão do `mcp_imagem/`: `app/`, `prompts/`, `tests/` e `outputs/`.
 
 ## Descrição dos Diretórios
 
-### `assets/senai/`
+### `senai/`
 Arquivos oficiais da identidade visual SENAI (logos branco e azul, barra lateral, modelo de apresentação em PDF). Não editar — são a fonte de verdade da marca.
 
-### `app/`
-Código do app Streamlit: interface (campo de prompt, botão de gerar, exibição e download) e integração com a API de geração de imagem.
+### `mcp_imagem/`
+Servidor MCP independente do app de slides. Divide o código assim:
+- `prompts/` monta o prompt; é uma função pura e testável;
+- `app/` chama a IA e faz o pós-processamento com Pillow;
+- `tests/` tem os testes (pytest);
+- `outputs/` guarda as imagens geradas, fora do git.
 
-### `prompts/`
-Lógica de montagem do prompt final enviado à IA de imagem, incluindo as instruções fixas de formato (proporção 16:9, layout com título e conteúdo).
-
-### `outputs/`
-Imagens geradas pelos usuários. Não versionado (ver `.gitignore`).
-
-### `tests/`
-Testes automatizados, principalmente da lógica de montagem de prompt em `prompts/`.
+`server.py` é o ponto de entrada. `assets/estilos/` guarda a imagem de referência de cada estilo, e é por ela que se troca o visual de um estilo. Tem `venv/`, `.env` e testes próprios. Rode tudo de dentro da pasta. Guia de instalação: `mcp_imagem/README.md`.
 
 ## Convenções de Nomenclatura
 

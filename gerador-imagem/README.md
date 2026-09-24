@@ -38,13 +38,13 @@ Em [mcp_imagem/](mcp_imagem/) está um servidor MCP que gera imagens em 8bit ou 
 
 - Azul SENAI `#164193`, laranja `#E8490F` e verde `#52AE32` (só em detalhes)
 - Fonte Century Gothic
-- Os arquivos oficiais ficam em [assets/senai/](assets/senai/): logos, barra lateral e o PDF do modelo. **Não edite esses arquivos.**
+- Os arquivos oficiais ficam em [senai/](senai/): logos, barra lateral e o PDF do modelo. **Não edite esses arquivos.**
 
 ## O que já está pronto
 
 - Configuração do Kiro: produto, stack, estrutura, identidade visual e spec
 - Pastas do projeto e `.gitignore`
-- Logos e modelo oficial do SENAI em `assets/senai/`
+- Logos e modelo oficial do SENAI em `senai/`
 
 ## O que falta para finalizar
 

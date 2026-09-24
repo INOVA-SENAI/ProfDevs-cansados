@@ -5,7 +5,5 @@ __pycache__/
 *.pyc
 
 # Imagens geradas
-outputs/*
-!outputs/.gitkeep
 mcp_imagem/outputs/*
 !mcp_imagem/outputs/.gitkeep

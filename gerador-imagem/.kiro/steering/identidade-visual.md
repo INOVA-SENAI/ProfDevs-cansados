@@ -4,7 +4,7 @@ inclusion: always
 
 # Identidade Visual: Modelo de Apresentação SENAI 2026
 
-Todo slide gerado DEVE seguir este padrão. Referência original: `assets/senai/modelo_apresentacao_senai_2026.pdf`.
+Todo slide gerado DEVE seguir este padrão. Referência original: `senai/modelo_apresentacao_senai_2026.pdf`.
 
 ## Formato
 - Proporção 16:9 (paisagem)
@@ -47,10 +47,10 @@ Todo slide gerado DEVE seguir este padrão. Referência original: `assets/senai/
 - Fundo azul, logo branco à esquerda, contatos do SENAI/SC à direita
 - É fixo (não gerado por IA) — usar o modelo original
 
-## Assets Oficiais (`assets/senai/`)
+## Assets Oficiais (`senai/`)
 - `logo_senai_branco.png` — logo para fundo azul (capa)
 - `logo_senai_azul.png` — logo para fundo branco (conteúdo e divisória); PNG 320x85 com fundo transparente, recortado sem margem — é este arquivo que o código sobrepõe na imagem gerada
 - `barra_lateral.png` — barra lateral laranja/azul dos slides internos
 
 ## Regra sobre o Logo
-Modelos de IA de imagem não reproduzem logotipos com fidelidade. O logo oficial NUNCA deve ser desenhado pela IA: a imagem é gerada sem logo e o arquivo oficial de `assets/senai/` é sobreposto por código na posição correta.
+Modelos de IA de imagem não reproduzem logotipos com fidelidade. O logo oficial NUNCA deve ser desenhado pela IA: a imagem é gerada sem logo e o arquivo oficial de `senai/` é sobreposto por código na posição correta.
