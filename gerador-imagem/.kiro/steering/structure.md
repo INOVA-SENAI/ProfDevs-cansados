@@ -32,7 +32,7 @@ Servidor MCP independente do app de slides. Divide o código assim:
 - `tests/` tem os testes (pytest);
 - `outputs/` guarda as imagens geradas, fora do git.
 
-`server.py` é o ponto de entrada. `assets/estilos/` guarda a imagem de referência de cada estilo, e é por ela que se troca o visual de um estilo. Tem `venv/`, `.env` e testes próprios. Rode tudo de dentro da pasta. Guia de instalação: `mcp_imagem/README.md`.
+`server.py` é o ponto de entrada. `assets/estilos/` guarda a imagem de referência de cada tipo de imagem (8bit, pixelart), e é por ela que se troca o visual de um tipo. A saída é sempre PNG com fundo transparente. Tem `venv/`, `.env` e testes próprios. Rode tudo de dentro da pasta. Guia de instalação: `mcp_imagem/README.md`.
 
 ## Convenções de Nomenclatura
 

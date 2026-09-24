@@ -1,4 +1,4 @@
-# Spec: MCP Gerador de Imagem por Estilo
+# Spec: MCP Gerador de Imagem por Tipo
 
 ---
 
@@ -18,8 +18,10 @@ Servidor MCP em `mcp_imagem/` que segue o padrão do gerador de slides. O prompt
 
 ### Funcionais
 - [x] RF01 - O usuário DEVE informar um prompt de texto
-- [x] RF02 - O usuário DEVE escolher o estilo `8bit` ou `pixelart`, exposto como enum no schema da tool
-- [x] RF03 - O usuário PODE enviar o caminho de uma imagem local para redesenhar no estilo
+- [x] RF02 - O usuário PODE escolher o `tipo` de imagem (`8bit`, que é o padrão, ou `pixelart`), exposto como enum no schema da tool; novos tipos entram cadastrando um preset e uma imagem de referência
+- [x] RF02b - O usuário PODE informar um `contexto` (onde ou para que a imagem será usada), que entra no prompt
+- [x] RF03 - O usuário PODE enviar o caminho de uma imagem local para redesenhar no tipo escolhido
+- [x] RF08 - **Obrigatório:** a imagem final DEVE ser PNG com fundo transparente (Remove Background da Stability e alfa binário no Pillow)
 - [x] RF04 - Sem imagem de referência, o sistema DEVE usar o Style Guide com a imagem de estilo de `mcp_imagem/assets/estilos/`
 - [x] RF05 - Com imagem de referência, o sistema DEVE usar o Style Transfer
 - [x] RF06 - O sistema DEVE aplicar por código uma grade de pixels uniforme e uma paleta limitada (16 cores no `8bit`, 32 no `pixelart`)
@@ -32,14 +34,14 @@ Servidor MCP em `mcp_imagem/` que segue o padrão do gerador de slides. O prompt
 
 ### Fora de escopo
 - Hospedar o servidor na AWS (AgentCore Runtime) e guardar as imagens no S3. Fica para quando houver uso remoto.
-- Outros estilos além de `8bit` e `pixelart`
+- Tipos além de `8bit` e `pixelart` (a estrutura já permite cadastrá-los)
 - Escolher a proporção da imagem (o padrão é 1:1)
 
 ---
 
 ## Tasks
 
-- [x] **Task 1:** `prompts/estilo_prompt.py` com `Estilo`, `ESTILOS` e `montar_prompt()`
+- [x] **Task 1:** `prompts/tipo_prompt.py` com `Tipo`, `TIPOS` e `montar_prompt(prompt, tipo, contexto)`
 - [x] **Task 2:** `app/image_gen.py`: Style Guide ou Style Transfer via `boto3` `invoke_model`
 - [x] **Task 3:** `app/pixel_grid.py`: grade de pixels e paleta com Pillow
 - [x] **Task 4:** `server.py`: tool MCP, validação da referência, conversão de erros para `ToolError`
@@ -67,7 +69,8 @@ Pesquisa feita em 24/09/2026 nas documentações oficiais, com o MCP de document
 
 ## Critérios de Aceite
 
-- [x] O schema da tool expõe `estilo` como enum `8bit` / `pixelart`
+- [x] O schema da tool expõe `tipo` (enum `8bit` / `pixelart`, padrão `8bit`) e `contexto`
+- [x] PNG RGBA com fundo transparente e alfa binário: nos testes reais de 24/09/2026, os cantos saíram transparentes, com 62% e 68% da área transparente
 - [x] Sem referência, a chamada vai para o Style Guide com `style_preset` `pixel-art`; com referência, vai para o Style Transfer (teste ponta a ponta com a Bedrock simulada)
 - [x] A imagem final tem blocos de pixel uniformes e no máximo N cores
 - [x] Caminho inválido, arquivo que não é imagem, prompt vazio e falta de credenciais retornam mensagem clara

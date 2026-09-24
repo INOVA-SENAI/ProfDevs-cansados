@@ -14,6 +14,7 @@ from botocore.exceptions import BotoCoreError, ClientError
 # estes dois estão Active e geram a partir de uma imagem de referência.
 STYLE_GUIDE = "us.stability.stable-image-style-guide-v1:0"
 STYLE_TRANSFER = "us.stability.stable-style-transfer-v1:0"
+REMOVE_BACKGROUND = "us.stability.stable-image-remove-background-v1:0"
 
 _CREDENCIAL = (
     " Falta uma credencial AWS válida: defina AWS_BEARER_TOKEN_BEDROCK no"
@@ -64,8 +65,17 @@ def gerar(
     else:
         modelo = STYLE_TRANSFER
         corpo = {"init_image": _b64(referencia), "style_image": _b64(estilo_ref)}
-    corpo |= {"prompt": prompt, "negative_prompt": negativo, "output_format": "png"}
+    corpo |= {"prompt": prompt, "negative_prompt": negativo}
+    return _invocar(modelo, corpo)
 
+
+def remover_fundo(png: bytes) -> bytes:
+    """Devolve o PNG com o fundo transparente (Stability Remove Background)."""
+    return _invocar(REMOVE_BACKGROUND, {"image": _b64(png)})
+
+
+def _invocar(modelo: str, corpo: dict) -> bytes:
+    corpo = corpo | {"output_format": "png"}
     try:
         resposta = _bedrock().invoke_model(modelId=modelo, body=json.dumps(corpo))
     except ClientError as e:

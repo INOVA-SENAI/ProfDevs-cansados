@@ -30,7 +30,7 @@ Os arquivos de `steering/` são lidos pelo Kiro em toda sessão. Se uma regra mu
 
 ## MCP gerador de imagens (8bit / pixel art)
 
-Em [mcp_imagem/](mcp_imagem/) está um servidor MCP que gera imagens em 8bit ou pixel art pela Amazon Bedrock, a partir de um texto ou de uma imagem sua. Ele já está registrado no Kiro ([.kiro/settings/mcp.json](.kiro/settings/mcp.json)) e no Claude Code ([.mcp.json](.mcp.json)), junto com o MCP de documentação oficial da AWS.
+Em [mcp_imagem/](mcp_imagem/) está um servidor MCP que gera PNGs com fundo transparente pela Amazon Bedrock. O tipo de imagem é um parâmetro (hoje, 8bit ou pixel art), e a imagem pode partir de um texto com contexto de uso ou de uma imagem sua. Ele já está registrado no Kiro ([.kiro/settings/mcp.json](.kiro/settings/mcp.json)) e no Claude Code ([.mcp.json](.mcp.json)), junto com o MCP de documentação oficial da AWS.
 
 **Instalar em outra máquina ou por outro agente de IA:** siga o [guia de instalação em mcp_imagem/README.md](mcp_imagem/README.md). Ele tem os passos em ordem, os comandos de verificação, o registro em cada cliente MCP e a tabela de erros.
 

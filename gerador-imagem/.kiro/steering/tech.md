@@ -46,7 +46,7 @@ inclusion: always
 
 ## MCP Gerador de Imagem (`mcp_imagem/`)
 - Servidor MCP em Python (`mcp` 2.x, classe `MCPServer`) rodando via stdio, registrado em `.kiro/settings/mcp.json` e `.mcp.json`
-- IA de imagem: Amazon Bedrock com Stability AI Image Services (Style Guide e Style Transfer), via `boto3`, região `us-east-1`
+- IA de imagem: Amazon Bedrock com Stability AI Image Services (Style Guide, Style Transfer e Remove Background), via `boto3`, região `us-east-1`. A saída é PNG com fundo transparente
 - Credenciais: `AWS_BEARER_TOKEN_BEDROCK` no `mcp_imagem/.env` ou a cadeia padrão da AWS, nunca no código
 - Pillow força a grade de pixels e a paleta. Testes com pytest, lint com ruff (configuração padrão)
 - Spec: `.kiro/specs/mcp-gerador-imagem.md`

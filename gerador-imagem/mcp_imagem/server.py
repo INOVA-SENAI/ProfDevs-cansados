@@ -1,4 +1,4 @@
-"""Servidor MCP: gera imagens em 8bit ou pixel art (Amazon Bedrock + Pillow). Papel do app/main.py."""
+"""Servidor MCP: gera PNG sem fundo em 8bit ou pixel art (Amazon Bedrock + Pillow). Papel do app/main.py."""
 
 import io
 import logging
@@ -15,9 +15,9 @@ from PIL import Image as PILImage
 from PIL import UnidentifiedImageError
 from pydantic import Field
 
-from app.image_gen import gerar
+from app.image_gen import gerar, remover_fundo
 from app.pixel_grid import pixelizar
-from prompts.estilo_prompt import ESTILOS, NEGATIVO, Estilo, montar_prompt
+from prompts.tipo_prompt import NEGATIVO, TIPOS, Tipo, montar_prompt
 
 RAIZ = Path(__file__).parent
 
@@ -72,38 +72,43 @@ def gerar_imagem(
     prompt: Annotated[
         str, Field(description="O que desenhar, ex.: 'um robô regando plantas'")
     ],
-    estilo: Annotated[
-        Estilo, Field(description="Estilo visual da imagem")
-    ] = "pixelart",
+    tipo: Annotated[Tipo, Field(description="Tipo de imagem a criar")] = "8bit",
+    contexto: Annotated[
+        str | None,
+        Field(
+            description="Onde ou para que a imagem será usada, ex.: 'ícone para slide"
+            " de aula sobre eletricidade'. Orienta composição e detalhes (opcional)"
+        ),
+    ] = None,
     imagem_referencia: Annotated[
         str | None,
         Field(
-            description="Caminho de uma imagem local para redesenhar no estilo (opcional)"
+            description="Caminho de uma imagem local para redesenhar no tipo escolhido (opcional)"
         ),
     ] = None,
 ) -> list[Image | str]:
-    """Gera uma imagem em 8bit ou pixel art a partir de um texto, ou converte uma imagem local para o estilo."""
-    preset = ESTILOS[estilo]
+    """Gera um PNG com fundo transparente no tipo escolhido (8bit ou pixel art), a partir
+    de um texto ou convertendo uma imagem local."""
+    preset = TIPOS[tipo]
     try:
         referencia = ler_referencia(imagem_referencia) if imagem_referencia else None
         png = gerar(
-            montar_prompt(prompt, estilo),
+            montar_prompt(prompt, tipo, contexto),
             NEGATIVO,
-            (RAIZ / "assets" / "estilos" / f"{estilo}.png").read_bytes(),
+            (RAIZ / "assets" / "estilos" / f"{tipo}.png").read_bytes(),
             preset.fidelidade,
             referencia,
         )
+        png = remover_fundo(png)
     except (ValueError, RuntimeError) as e:
         # Só ToolError chega ao cliente com a mensagem; outras exceções viram erro genérico.
         raise ToolError(str(e)) from e
     final = pixelizar(PILImage.open(io.BytesIO(png)), preset.pixels, preset.cores)
     destino = (
-        RAIZ
-        / "outputs"
-        / f"{estilo}-{datetime.now().astimezone():%Y%m%d-%H%M%S-%f}.png"
+        RAIZ / "outputs" / f"{tipo}-{datetime.now().astimezone():%Y%m%d-%H%M%S-%f}.png"
     )
     final.save(destino)
-    return [Image(path=destino), f"Imagem salva em {destino}"]
+    return [Image(path=destino), f"PNG com fundo transparente salvo em {destino}"]
 
 
 if __name__ == "__main__":

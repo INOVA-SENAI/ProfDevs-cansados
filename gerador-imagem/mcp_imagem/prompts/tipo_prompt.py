@@ -1,8 +1,9 @@
-"""Monta o prompt final de cada estilo. Função pura: não chama API nenhuma."""
+"""Monta o prompt final de cada tipo de imagem. Função pura: não chama API nenhuma."""
 
 from typing import Literal, NamedTuple
 
-Estilo = Literal["8bit", "pixelart"]
+# Para criar um tipo: acrescente o nome aqui, um Preset em TIPOS e assets/estilos/<nome>.png.
+Tipo = Literal["8bit", "pixelart"]
 
 
 class Preset(NamedTuple):
@@ -13,7 +14,7 @@ class Preset(NamedTuple):
     fidelidade: float  # 0 a 1: quanto a saída copia o estilo da imagem de referência
 
 
-ESTILOS: dict[str, Preset] = {
+TIPOS: dict[str, Preset] = {
     "8bit": Preset(
         "8-bit NES-era video game sprite art, very low resolution, chunky square pixels, "
         "limited 16-color palette, flat colors, bold dark outlines, no anti-aliasing",
@@ -32,11 +33,24 @@ ESTILOS: dict[str, Preset] = {
     ),
 }
 
-NEGATIVO = "blurry, smooth gradients, anti-aliasing, photorealistic, 3d render, text, watermark, logo"
+# A imagem final é PNG sem fundo: pedir um objeto isolado em fundo liso deixa a
+# remoção de fundo limpa.
+ISOLADO = (
+    "single isolated subject, centered, fully visible, "
+    "on a plain flat solid white background, no scenery"
+)
+
+NEGATIVO = (
+    "blurry, smooth gradients, anti-aliasing, photorealistic, 3d render, text, "
+    "watermark, logo, background scenery, landscape, sky, ground, frame, border"
+)
 
 
-def montar_prompt(prompt: str, estilo: Estilo) -> str:
+def montar_prompt(prompt: str, tipo: Tipo, contexto: str | None = None) -> str:
     prompt = prompt.strip()
     if not prompt:
         raise ValueError("O prompt não pode ser vazio.")
-    return f"{prompt}. {ESTILOS[estilo].descricao}"
+    partes = [prompt]
+    if contexto and contexto.strip():
+        partes.append(f"Context: {contexto.strip()}")
+    return ". ".join([*partes, TIPOS[tipo].descricao, ISOLADO])
