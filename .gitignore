@@ -1,0 +1,9 @@
+# Ambiente
+.env
+venv/
+__pycache__/
+*.pyc
+
+# Imagens geradas
+outputs/*
+!outputs/.gitkeep

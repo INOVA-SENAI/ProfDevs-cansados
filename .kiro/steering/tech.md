@@ -4,40 +4,42 @@ inclusion: always
 
 # Stack Tecnológica
 
-> **Status:** Stack ainda não definida. Preencha conforme as decisões forem tomadas.
+> **Status:** Stack definida para o MVP do gerador de imagens de slide.
 
 ## Linguagens
 <!-- Ex: TypeScript, Python, Go... -->
-- A definir
+- Python
 
 ## Frontend
 <!-- Ex: React 18, Vue 3, HTML/CSS/JS puro... -->
-- A definir
+- Streamlit (app único: campo de prompt, botão de gerar, exibição e download da imagem)
 
 ## Backend
 <!-- Ex: Node.js + Express, FastAPI, NestJS... -->
-- A definir
+- Nenhum backend separado — a lógica (montagem de prompt e chamada à API de imagem) roda dentro do próprio app Streamlit
 
 ## Banco de Dados
 <!-- Ex: PostgreSQL, MongoDB, SQLite... -->
-- A definir
+- Nenhum (sem persistência de dados no MVP)
 
 ## Ferramentas de Build
 <!-- Ex: Vite, Webpack, esbuild... -->
-- A definir
+- Nenhuma (Python puro, sem etapa de build)
 
 ## Linting e Formatação
 <!-- Ex: ESLint + Prettier, Biome... -->
-- A definir
+- ruff
 
 ## Testes
 <!-- Ex: Vitest, Jest, Playwright... -->
-- A definir
+- pytest (cobrindo principalmente a lógica de montagem de prompt)
 
 ## Infraestrutura / Deploy
 <!-- Ex: Vercel, Docker, AWS... -->
-- A definir
+- Local para começar; Streamlit Community Cloud se precisar publicar
 
 ## Outras Dependências Relevantes
 <!-- Liste pacotes ou libs importantes que o projeto usa -->
-- A definir
+- `openai` (SDK para geração de imagem via gpt-image-1 / DALL-E 3)
+- `python-dotenv` (leitura da chave de API a partir de variável de ambiente, nunca hardcoded)
+- `Pillow` (sobreposição do logo oficial SENAI na imagem gerada pela IA)
