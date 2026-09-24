@@ -12,37 +12,41 @@ ProfDevs-cansados/
 │   ├── steering/       # Arquivos de contexto e padrões do projeto
 │   ├── hooks/          # Automações e gatilhos do agente
 │   └── specs/          # Especificações de features
-├── arquitetura/        # (ver descrição abaixo)
-├── arquiteturas/       # (ver descrição abaixo)
-├── icones/             # Ícones e assets visuais do projeto
-├── renderizador/       # (ver descrição abaixo)
+├── assets/senai/       # Logos oficiais, barra lateral e modelo PDF do SENAI
+├── app/                # App Streamlit (main.py, chamada à API de imagem)
+├── prompts/            # Módulo que monta o prompt padronizado de "slide"
+├── outputs/            # Imagens geradas (gitignored)
+├── tests/              # Testes automatizados (pytest)
 └── README.md
 ```
 
 ## Descrição dos Diretórios
 
-### `arquitetura/`
-<!-- Descreva o propósito desta pasta. Ex: diagramas de arquitetura, decisões técnicas... -->
+### `assets/senai/`
+Arquivos oficiais da identidade visual SENAI (logos branco e azul, barra lateral, modelo de apresentação em PDF). Não editar — são a fonte de verdade da marca.
 
-### `arquiteturas/`
-<!-- Descreva o propósito desta pasta. -->
+### `app/`
+Código do app Streamlit: interface (campo de prompt, botão de gerar, exibição e download) e integração com a API de geração de imagem.
 
-### `icones/`
-<!-- Ícones utilizados no projeto. Formato preferido: SVG -->
+### `prompts/`
+Lógica de montagem do prompt final enviado à IA de imagem, incluindo as instruções fixas de formato (proporção 16:9, layout com título e conteúdo).
 
-### `renderizador/`
-<!-- Descreva o propósito desta pasta. Ex: módulo responsável por renderização visual... -->
+### `outputs/`
+Imagens geradas pelos usuários. Não versionado (ver `.gitignore`).
+
+### `tests/`
+Testes automatizados, principalmente da lógica de montagem de prompt em `prompts/`.
 
 ## Convenções de Nomenclatura
 
 ### Arquivos
 <!-- Ex: kebab-case para arquivos, PascalCase para componentes... -->
-- A definir
+- `snake_case` para arquivos Python (ex: `image_gen.py`, `slide_prompt.py`)
 
 ### Pastas
 <!-- Ex: lowercase, sem espaços... -->
-- A definir
+- lowercase, sem espaços (ex: `app`, `prompts`, `outputs`)
 
 ### Branches Git
 <!-- Ex: feature/nome-da-feature, fix/descricao-do-bug... -->
-- A definir
+- `feature/nome-da-feature`, `fix/descricao-do-bug`
