@@ -1,0 +1,51 @@
+nome: NR-10 Introducao
+
+slides:
+  - tipo: capa
+    titulo: Segurança em Instalações Elétricas
+
+  - tipo: divisoria
+    titulo: Riscos elétricos
+
+  - tipo: conteudo
+    titulo: Principais riscos da eletricidade
+    topicos:
+      - "Choque elétrico: corrente passando pelo corpo"
+      - "Arco elétrico: calor intenso que causa queimaduras graves"
+      - Incêndios por sobrecarga ou curto-circuito
+    destaque: Todo circuito deve ser tratado como energizado até prova em contrário.
+
+  - tipo: divisoria
+    titulo: Medidas de controle
+
+  - tipo: conteudo
+    titulo: Medidas coletivas
+    topicos:
+      - Desenergização do circuito antes do serviço
+      - Aterramento e equipotencialização
+      - Sinalização e isolamento da área
+
+  - tipo: diagrama
+    titulo: Etapas da desenergização
+    itens:
+      - titulo: Seccionamento
+        texto: Desligar e abrir o circuito com um dispositivo de manobra adequado.
+      - titulo: Impedimento
+        texto: Bloquear e travar o dispositivo para ninguém religar o circuito.
+      - titulo: Ausência de tensão
+        texto: Testar com detector de tensão antes de tocar no circuito.
+      - titulo: Aterramento
+        texto: Instalar o aterramento temporário com equipotencialização.
+      - titulo: Proteção
+        texto: Proteger as partes energizadas que ficam na zona controlada.
+      - titulo: Sinalização
+        texto: Sinalizar no local o impedimento de reenergização.
+
+  - tipo: conteudo
+    titulo: Medidas individuais
+    topicos:
+      - Uso de EPIs adequados à classe de tensão
+      - Vestimenta antichama
+      - Ferramentas isoladas e inspecionadas
+
+  - tipo: encerramento

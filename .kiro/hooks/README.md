@@ -1,75 +1,51 @@
 # Hooks do Kiro
 
-Hooks permitem que o agente execute ações automaticamente quando eventos ocorrem no IDE.
+Hooks executam uma ação automaticamente quando um evento acontece no IDE. Cada hook é um arquivo JSON em `.kiro/hooks/`.
 
-## Como criar um Hook
+## Hooks deste projeto
 
-Crie um arquivo JSON em `.kiro/hooks/<id>.json` seguindo o schema:
+| Arquivo | Gatilho | Ação | Objetivo |
+|---|---|---|---|
+| `validar-slides.json` | `FileSave` em `slides/*.yaml` ou `slides/*.yml` | `python -m senai_slides.validador slides/ --gerar` | Salvou o deck, validou e gerou os slides |
+| `caca-segredos.json` | `PostTaskExecution` | `python scripts/caca_segredos.py` | Nenhuma chave da AWS no repositório |
+
+Os comandos usam o `python` do terminal do Kiro: deixe o `venv` do projeto selecionado como interpretador.
+
+## Formato
 
 ```json
 {
   "version": "v1",
-  "hooks": [{
-    "name": "Nome do Hook",
-    "trigger": "NomeDoEvento",
-    "matcher": "regex-opcional",
-    "action": {
-      "type": "command",
-      "command": "comando-a-executar"
+  "hooks": [
+    {
+      "name": "Nome do hook",
+      "trigger": "FileSave",
+      "matcher": "regex-opcional",
+      "action": { "type": "command", "command": "comando" },
+      "timeout": 60
     }
-  }]
+  ]
 }
 ```
 
-## Eventos disponíveis (triggers)
+- **trigger:** o evento que dispara o hook (tabela abaixo).
+- **matcher:** regex opcional. Nos eventos de arquivo, é comparada com o caminho; nos de ferramenta, com o nome da ferramenta. Sem matcher, o hook sempre dispara.
+- **action:** `command` roda um comando no terminal; `agent` injeta um `prompt` na conversa.
+- **timeout:** só para `command`. 60 s por padrão; `0` desliga.
+
+## Gatilhos
 
 | Trigger | Quando dispara |
 |---|---|
-| `SessionStart` | Ao iniciar uma nova sessão no Kiro |
-| `UserPromptSubmit` | Ao enviar uma mensagem ao agente |
-| `PreToolUse` | Antes de uma ferramenta ser executada |
-| `PostToolUse` | Após uma ferramenta ser executada |
-| `PostFileSave` | Ao salvar um arquivo |
-| `PostFileCreate` | Ao criar um novo arquivo |
-| `PostFileDelete` | Ao deletar um arquivo |
-| `PreTaskExec` | Antes de uma task de spec iniciar |
-| `PostTaskExec` | Após uma task de spec ser concluída |
-| `Stop` | Ao encerrar uma execução do agente |
+| `PromptSubmit` | Ao enviar uma mensagem ao agente (pode bloquear) |
+| `AgentStop` | Quando o agente termina a resposta |
+| `SessionStart` | Ao iniciar uma sessão (só IDE) |
+| `PreToolUse` | Antes de uma ferramenta rodar (pode bloquear) |
+| `PostToolUse` | Depois de uma ferramenta rodar |
+| `FileCreate` | Ao criar um arquivo |
+| `FileSave` | Ao salvar um arquivo |
+| `FileDelete` | Ao apagar um arquivo |
+| `PreTaskExecution` | Antes de uma task de spec começar (só IDE) |
+| `PostTaskExecution` | Depois que uma task de spec termina (só IDE) |
 
-## Tipos de ação
-
-- **`command`** — executa um comando shell; recebe JSON via stdin com contexto da sessão
-- **`agent`** — injeta um prompt estático no contexto do modelo
-
-## Exemplo: Lint ao salvar arquivos TypeScript
-
-```json
-{
-  "version": "v1",
-  "hooks": [{
-    "name": "Lint on Save",
-    "trigger": "PostFileSave",
-    "matcher": "\\.(ts|tsx)$",
-    "action": {
-      "type": "command",
-      "command": "npm run lint"
-    }
-  }]
-}
-```
-
-## Exemplo: Rodar testes após completar uma task
-
-```json
-{
-  "version": "v1",
-  "hooks": [{
-    "name": "Run Tests After Task",
-    "trigger": "PostTaskExec",
-    "action": {
-      "type": "command",
-      "command": "npm run test -- --run"
-    }
-  }]
-}
-```
+Fonte: kiro.dev/docs/hooks. O teste `tests/test_kiro.py` confere que os hooks do projeto usam só esses gatilhos.

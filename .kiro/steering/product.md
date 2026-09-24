@@ -9,18 +9,24 @@ ProfDevs-cansados
 
 ## Descrição
 <!-- Descreva aqui o propósito principal do projeto. O que ele faz? Qual problema resolve? -->
-O projeto é um gerador de imagens únicas no formato de slide (proporção 16:9, com título e conteúdo visual) a partir de um prompt de texto livre digitado pelo usuário, usando IA generativa de imagem e seguindo o Modelo de Apresentação oficial do SENAI 2026 (ver `identidade-visual.md`). Resolve o problema de professores e alunos que precisam criar rapidamente uma imagem de slide para aula ou apresentação, sem precisar abrir uma ferramenta de design.
+O projeto tem duas partes:
+
+1. **Agente de Slides SENAI**: no Kiro, a skill `gerador-slides`; em qualquer outra IA de chat, o prompt portátil `agente/AGENTE_SLIDES_SENAI.md`. A IA conversa sobre a aula e escreve um deck em YAML com o conteúdo dos slides.
+2. **Biblioteca `senai_slides`**: o validador confere o deck (limites de texto, ordem, campos) e, se não houver erro, desenha os slides no padrão do Modelo de Apresentação SENAI 2026 (ver `identidade-visual.md`) e salva PNGs e um PDF.
+
+A IA só escreve o conteúdo; todo o visual é feito pela biblioteca. Assim o resultado é sempre fiel à marca, sem depender de API paga nem de IA de imagem.
 
 ## Público-alvo
 <!-- Quem são os usuários finais? Ex: desenvolvedores, estudantes, professores de SENAI... -->
-Professores e alunos do SENAI que precisam gerar uma imagem de slide rapidamente a partir de uma ideia ou tema, sem depender de ferramentas de design.
+Professores do SENAI que precisam montar apresentações de aula rapidamente, sem ferramenta de design.
 
 ## Objetivos
 <!-- Liste os objetivos principais do projeto -->
-- [ ] Gerar uma imagem de slide a partir de um prompt/tema livre digitado pelo usuário
-- [ ] Seguir fielmente a identidade visual do SENAI (cores, tipografia, logo oficial, tipos de slide: capa, conteúdo e divisória)
-- [ ] Interface simples para digitar o prompt, visualizar e baixar a imagem gerada
+- [x] Agente (skill no Kiro e prompt portátil) que escreve o conteúdo da aula em um deck YAML
+- [x] Validador que confere o deck antes de gerar, com mensagens em português
+- [x] Biblioteca que transforma o script em slides fiéis à identidade visual do SENAI (capa, conteúdo, divisória, diagrama e encerramento)
+- [x] Saída pronta para usar: um PNG por slide e um PDF com a apresentação completa
 
 ## Status
 <!-- Ex: Em desenvolvimento, MVP, Produção -->
-Em desenvolvimento
+MVP pronto

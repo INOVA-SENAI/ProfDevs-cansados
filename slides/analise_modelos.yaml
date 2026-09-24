@@ -1,0 +1,118 @@
+nome: Analise de Modelos e Consistencia
+
+slides:
+  - tipo: capa
+    titulo: Diagrama de Classes e Relacionamentos
+
+  - tipo: divisoria
+    titulo: Diagrama de Classes
+
+  - tipo: conteudo
+    titulo: O que é uma classe?
+    topicos:
+      - Representa um elemento importante do domínio
+      - "Possui: atributos (características) e métodos (comportamentos)"
+      - "Exemplo: Professor - matricula, nome, email, reservar()"
+
+  - tipo: conteudo
+    titulo: Classe versus Objeto
+    topicos:
+      - "Classe: o modelo (ex. Professor)"
+      - "Objeto: ocorrência concreta (ex. Professor Carlos, mat. 12345)"
+      - "Analogia: classe é molde, objeto é algo criado com o molde"
+
+  - tipo: conteudo
+    titulo: Atributos e Métodos
+    topicos:
+      - "Atributos: informações armazenadas"
+      - "Métodos: ações ou comportamentos"
+      - "Pergunta: que informações guardar? Que ações realizar?"
+
+  - tipo: divisoria
+    titulo: Relacionamentos
+
+  - tipo: conteudo
+    titulo: Classes não vivem isoladas
+    topicos:
+      - Elementos do sistema possuem relações
+      - "Perguntas: Professor pode fazer reservas? Quantas?"
+      - Multiplicidade descreve essas relações quantitativamente
+
+  - tipo: divisoria
+    titulo: Multiplicidade
+
+  - tipo: conteudo
+    titulo: O que significa?
+    topicos:
+      - "1: exatamente um"
+      - "0..1: nenhum ou um"
+      - "0..* ou *: nenhum ou vários"
+
+  - tipo: conteudo
+    titulo: Leitura de multiplicidades
+    topicos:
+      - "Professor 1 - 0..* Reserva"
+      - Professor pode ter nenhuma ou várias reservas
+      - Cada reserva pertence a exatamente um professor
+    destaque: "A pergunta correta é: quantos podem estar relacionados a UM?."
+
+  - tipo: divisoria
+    titulo: Mudanças de Requisitos
+
+  - tipo: conteudo
+    titulo: Sistemas mudam durante o desenvolvimento
+    topicos:
+      - Cliente solicita novas funcionalidades
+      - Regras existentes são alteradas
+      - Novos usuários e atores podem surgir
+    destaque: Uma mudança de requisito pode afetar todos os modelos.
+
+  - tipo: conteudo
+    titulo: Análise de impacto
+    topicos:
+      - "Mudança: Alunos podem solicitar reservas"
+      - "Impactos: novo requisito, novo ator, novo caso de uso"
+      - Uma única frase modifica vários modelos
+
+  - tipo: divisoria
+    titulo: Consistência entre modelos
+
+  - tipo: conteudo
+    titulo: Tudo deve contar a mesma história
+    topicos:
+      - "Fluxo: Requisitos - Atores - Casos de Uso - Atividades - Classes"
+      - Todos representam o mesmo sistema, pontos de vista diferentes
+      - Se algo muda, verificar os outros modelos
+    destaque: Modelos inconsistentes levam a programação errada.
+
+  - tipo: conteudo
+    titulo: Checklist de consistência
+    topicos:
+      - "Requisito menciona aluno? Aluno é ator?"
+      - "Novo caso de uso está no diagrama?"
+      - "O fluxo de atividade contempla o novo requisito?"
+      - "As classes precisam de novos atributos?"
+
+  - tipo: conteudo
+    titulo: Perguntas fundamentais para modelagem
+    topicos:
+      - "O que o sistema precisa fazer? Quem utiliza?"
+      - "Como cada processo acontece?"
+      - "Quais informações devem existir e como se relacionam?"
+
+  - tipo: conteudo
+    titulo: A pergunta final
+    topicos:
+      - "Se algo mudar, quais modelos serão afetados?"
+      - Responder significa entender realmente o sistema
+      - Capacita para lidar com mudanças futuras
+
+  - tipo: conteudo
+    titulo: Por que modelar?
+    topicos:
+      - Compreender o problema antes de programar
+      - Organizar ideias e encontrar erros
+      - Comunicar a solução claramente
+    destaque: "Quanto melhor entendemos o problema, menor a chance de errar."
+
+  - tipo: encerramento

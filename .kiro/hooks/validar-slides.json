@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Validar e gerar slides",
+      "trigger": "FileSave",
+      "matcher": "slides[/\\\\].*\\.ya?ml$",
+      "action": {
+        "type": "command",
+        "command": "python -m senai_slides.validador slides/ --gerar"
+      },
+      "timeout": 120
+    }
+  ]
+}
