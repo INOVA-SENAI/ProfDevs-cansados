@@ -2,7 +2,9 @@
 
 Servidor MCP em Python com uma única tool, `gerar_imagem`. Ela gera uma imagem em **8bit** ou **pixel art** a partir de um texto, ou redesenha nesse estilo uma imagem local. A IA é a Amazon Bedrock (Stability AI Image Services), e o Pillow garante a grade de pixels e a paleta. Roda localmente via stdio em qualquer cliente MCP: Claude Code, Kiro, Claude Desktop, Cursor, VS Code e outros.
 
-> **Agente de IA:** siga as seções 1 a 6 em ordem. Os comandos partem desta pasta (`gerador-imagem/mcp_imagem/`), salvo quando indicado. Só três coisas exigem o humano, e estão marcadas com 🧑: a conta AWS, o aceite dos termos pagos e o login.
+> **Agente de IA:** siga as seções 1 a 6 em ordem. Os comandos partem desta pasta (`gerador-imagem/mcp_imagem/`), salvo quando indicado. Só três coisas exigem o humano, e estão marcadas com 🧑: a conta AWS, o aceite dos termos pagos e a credencial.
+>
+> **Toda instalação precisa de uma credencial AWS.** Cada imagem é cobrada na conta AWS dona da credencial, e a chave nunca fica no repositório. Sem ela, o servidor instala e lista a tool normalmente, mas toda geração responde `Falta uma credencial AWS válida`. Nesse caso, siga a seção 4.2. **Nunca peça nem aceite a chave pelo chat.**
 
 ---
 
@@ -104,11 +106,24 @@ CHAVE=$(aws iam create-service-specific-credential --user-name $U --service-name
 printf 'AWS_BEARER_TOKEN_BEDROCK=%s\nAWS_REGION=us-east-1\n' "$CHAVE" > .env && chmod 600 .env && unset CHAVE
 ```
 
-Nunca imprima a chave nem faça commit do `.env`, que já está no `.gitignore`.
+Se a chave já existe, o humano a cola no `.env`: tira o `#` da linha `AWS_BEARER_TOKEN_BEDROCK=` e preenche. Nunca imprima a chave nem faça commit do `.env`, que já está no `.gitignore`.
 
 **Opção B: login do humano, sem chave**
 
-Deixe `AWS_BEARER_TOKEN_BEDROCK` vazio no `.env` e rode `aws configure set region us-east-1 && aws login`. 🧑 O humano aprova no navegador. A sessão dura 12 h e o boto3 a renova sozinho. Depois disso, é preciso refazer o `aws login`.
+Mantenha a linha `AWS_BEARER_TOKEN_BEDROCK` comentada no `.env` e rode `aws configure set region us-east-1 && aws login`. 🧑 O humano aprova no navegador. A sessão dura 12 h e o boto3 a renova sozinho. Depois disso, é preciso refazer o `aws login`.
+
+**Opção C: agente em ambiente na nuvem ou container** (Claude Code na web, Codespaces, CI)
+
+Nesses ambientes não dá para rodar o `aws login`, e o container some ao fim da sessão.
+
+1. 🧑 O humano cadastra a chave como variável de ambiente `AWS_BEARER_TOKEN_BEDROCK` nas configurações do ambiente. No Claude Code na web, o caminho é: menu do ambiente → *Edit* → variáveis de ambiente. Depois disso, abre uma sessão nova.
+2. O agente grava a chave no `.env`, sem exibi-la. Assim o servidor a encontra seja qual for o cliente MCP:
+
+```bash
+[ -n "$AWS_BEARER_TOKEN_BEDROCK" ] && printf 'AWS_BEARER_TOKEN_BEDROCK=%s\nAWS_REGION=us-east-1\n' "$AWS_BEARER_TOKEN_BEDROCK" > .env && chmod 600 .env && echo "chave gravada" || echo "AWS_BEARER_TOKEN_BEDROCK não está no ambiente: peça ao humano (passo 1)"
+```
+
+**Como o servidor escolhe a credencial:** usa a variável de ambiente, se estiver preenchida. Se não estiver, usa o `.env`. Se nenhum dos dois tiver chave, cai no `aws login` ou no perfil padrão da AWS. Valores vazios são ignorados.
 
 ---
 
@@ -144,6 +159,8 @@ Bloco JSON. Ao editar um arquivo que já existe, **acrescente** a entrada dentro
 }
 ```
 
+A chave AWS não precisa aparecer aqui, porque o servidor lê o `.env` pelo próprio caminho. Se o ambiente usa proxy e o cliente não repassa essas variáveis, acrescente à entrada `"env": {"HTTPS_PROXY": "...", "SSL_CERT_FILE": "..."}` com os valores do ambiente.
+
 Este repositório já traz `gerador-imagem/.mcp.json` (Claude Code) e `gerador-imagem/.kiro/settings/mcp.json` (Kiro) com caminhos relativos. Eles valem quando `gerador-imagem/` é aberta como pasta do projeto.
 
 Os clientes web (ChatGPT, claude.ai) só aceitam MCP remoto, por URL HTTPS. Este servidor roda localmente, então **não funciona** neles.
@@ -156,14 +173,18 @@ Os clientes web (ChatGPT, claude.ai) só aceitam MCP remoto, por URL HTTPS. Este
 
 ```bash
 venv/bin/python - <<'EOF'
-import asyncio
+import asyncio, os
 from pathlib import Path
 from mcp.client import Client
 from mcp.client.stdio import StdioServerParameters
 
 async def main():
     py = Path("venv/bin/python").absolute()  # não use resolve(): ele sai do venv
-    params = StdioServerParameters(command=str(py), args=[str(Path("server.py").resolve())])
+    params = StdioServerParameters(
+        command=str(py),
+        args=[str(Path("server.py").resolve())],
+        env=dict(os.environ),  # sem isto, proxy e certificados do ambiente não chegam ao servidor
+    )
     async with Client(params) as c:
         print([t.name for t in (await c.list_tools()).tools])
 
@@ -171,6 +192,8 @@ asyncio.run(main())
 EOF
 # esperado: ['gerar_imagem']
 ```
+
+Sem o `env`, o cliente stdio do SDK repassa ao servidor só `HOME`, `PATH` e mais algumas variáveis. Atrás de um proxy, isso dá erro de certificado SSL. Os clientes MCP (Claude Code, Kiro etc.) têm regras próprias; se lá faltar alguma variável, use o bloco `env` da configuração (seção 5).
 
 **b) Geração real.** Custa cerca de US$ 0,07; peça a confirmação do humano. Depois de reiniciar o cliente MCP, chame a tool:
 
@@ -184,7 +207,8 @@ O esperado é uma imagem e a mensagem `Imagem salva em .../outputs/8bit-<data>.p
 
 | Mensagem (começo) | Causa | Solução |
 |---|---|---|
-| `Não foi possível chamar a Bedrock: Unable to locate credentials` | Sem credencial | Seção 4.2 |
+| `... Falta uma credencial AWS válida` (com `Unable to locate credentials`, `UnrecognizedClientException`, `IncompleteSignatureException` ou `ExpiredTokenException`) | Sem credencial, com chave inválida ou com a sessão do `aws login` expirada | Seção 4.2. Em container ou nuvem, opção C |
+| `SSL: CERTIFICATE_VERIFY_FAILED` | Ambiente atrás de proxy, e as variáveis do proxy não chegaram ao servidor | Passar o ambiente para o servidor (nota da seção 6a) |
 | `A Bedrock recusou o pedido (AccessDeniedException): Your account is currently being verified` | Conta AWS nova ainda em verificação | Aguardar; costuma levar até 2 h |
 | `A Bedrock recusou o pedido (AccessDeniedException)` (outros casos) | Modelos não ativados, ou chave sem permissão | Seções 4.1 e 4.2 |
 | `A Bedrock recusou o pedido (ThrottlingException)` | Muitas chamadas seguidas | Esperar alguns segundos e tentar de novo |

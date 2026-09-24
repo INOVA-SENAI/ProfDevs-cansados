@@ -15,6 +15,18 @@ from botocore.exceptions import BotoCoreError, ClientError
 STYLE_GUIDE = "us.stability.stable-image-style-guide-v1:0"
 STYLE_TRANSFER = "us.stability.stable-style-transfer-v1:0"
 
+_CREDENCIAL = (
+    " Falta uma credencial AWS válida: defina AWS_BEARER_TOKEN_BEDROCK no"
+    " mcp_imagem/.env ou rode `aws login` (README, seção 4.2)."
+)
+_DICAS = {
+    "UnrecognizedClientException": _CREDENCIAL,
+    "IncompleteSignatureException": _CREDENCIAL,
+    "ExpiredTokenException": _CREDENCIAL,
+    "AccessDeniedException": " Confira se a conta AWS já foi verificada e se os modelos"
+    " Stability AI estão ativos (README, seção 4.1).",
+}
+
 
 @cache
 def _bedrock():
@@ -58,19 +70,13 @@ def gerar(
         resposta = _bedrock().invoke_model(modelId=modelo, body=json.dumps(corpo))
     except ClientError as e:
         erro = e.response["Error"]
-        dica = (
-            " Confira se a conta AWS já foi verificada e se o acesso aos modelos"
-            " Stability AI está ativo no console da Bedrock."
-            if erro["Code"] == "AccessDeniedException"
-            else ""
-        )
         raise RuntimeError(
             f"A Bedrock recusou o pedido ({erro['Code']}): "
-            f"{erro['Message'].rstrip('.')}.{dica}"
+            f"{erro['Message'].rstrip('.')}.{_DICAS.get(erro['Code'], '')}"
         ) from e
     except BotoCoreError as e:  # sem credenciais, sem rede, timeout
         raise RuntimeError(
-            f"Não foi possível chamar a Bedrock: {e}. Rode `aws login` ou confira AWS_BEARER_TOKEN_BEDROCK no .env."
+            f"Não foi possível chamar a Bedrock: {e}.{_CREDENCIAL}"
         ) from e
 
     dados = json.loads(resposta["body"].read())

@@ -2,11 +2,12 @@
 
 import io
 import logging
+import os
 from datetime import datetime
 from pathlib import Path
 from typing import Annotated
 
-from dotenv import load_dotenv
+from dotenv import dotenv_values
 from mcp.server import MCPServer
 from mcp.server.mcpserver import Image
 from mcp.server.mcpserver.exceptions import ToolError
@@ -19,7 +20,22 @@ from app.pixel_grid import pixelizar
 from prompts.estilo_prompt import ESTILOS, NEGATIVO, Estilo, montar_prompt
 
 RAIZ = Path(__file__).parent
-load_dotenv(RAIZ / ".env")
+
+
+def carregar_env(caminho: Path) -> None:
+    """Completa o ambiente com o .env sem sobrescrever o que já veio preenchido.
+
+    Valores vazios são ignorados. Um AWS_BEARER_TOKEN_BEDROCK vazio faria o boto3
+    tentar um token vazio em vez do `aws login` (IncompleteSignatureException).
+    """
+    for chave, valor in dotenv_values(caminho).items():
+        if valor and not os.environ.get(chave):
+            os.environ[chave] = valor
+    if not os.environ.get("AWS_BEARER_TOKEN_BEDROCK", "").strip():
+        os.environ.pop("AWS_BEARER_TOKEN_BEDROCK", None)
+
+
+carregar_env(RAIZ / ".env")
 # O log vai para o stderr. Em servidor stdio, print() quebra o protocolo.
 logging.basicConfig(level=logging.INFO)
 
