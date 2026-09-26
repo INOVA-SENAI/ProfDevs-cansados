@@ -1,118 +1,160 @@
 nome: Analise de Modelos e Consistencia
-
+titulo: Diagrama de Classes e Relacionamentos
+secoes:
+- nome: Diagrama de Classes
+- nome: Relacionamentos
+- nome: Multiplicidade
+- nome: Mudanças de Requisitos
+- nome: Consistência entre modelos
 slides:
-  - tipo: capa
-    titulo: Diagrama de Classes e Relacionamentos
-
-  - tipo: divisoria
-    titulo: Diagrama de Classes
-
-  - tipo: conteudo
-    titulo: O que é uma classe?
-    topicos:
-      - Representa um elemento importante do domínio
-      - "Possui: atributos (características) e métodos (comportamentos)"
-      - "Exemplo: Professor - matricula, nome, email, reservar()"
-
-  - tipo: conteudo
-    titulo: Classe versus Objeto
-    topicos:
-      - "Classe: o modelo (ex. Professor)"
-      - "Objeto: ocorrência concreta (ex. Professor Carlos, mat. 12345)"
-      - "Analogia: classe é molde, objeto é algo criado com o molde"
-
-  - tipo: conteudo
-    titulo: Atributos e Métodos
-    topicos:
-      - "Atributos: informações armazenadas"
-      - "Métodos: ações ou comportamentos"
-      - "Pergunta: que informações guardar? Que ações realizar?"
-
-  - tipo: divisoria
-    titulo: Relacionamentos
-
-  - tipo: conteudo
-    titulo: Classes não vivem isoladas
-    topicos:
-      - Elementos do sistema possuem relações
-      - "Perguntas: Professor pode fazer reservas? Quantas?"
-      - Multiplicidade descreve essas relações quantitativamente
-
-  - tipo: divisoria
-    titulo: Multiplicidade
-
-  - tipo: conteudo
-    titulo: O que significa?
-    topicos:
-      - "1: exatamente um"
-      - "0..1: nenhum ou um"
-      - "0..* ou *: nenhum ou vários"
-
-  - tipo: conteudo
-    titulo: Leitura de multiplicidades
-    topicos:
-      - "Professor 1 - 0..* Reserva"
-      - Professor pode ter nenhuma ou várias reservas
-      - Cada reserva pertence a exatamente um professor
-    destaque: "A pergunta correta é: quantos podem estar relacionados a UM?."
-
-  - tipo: divisoria
-    titulo: Mudanças de Requisitos
-
-  - tipo: conteudo
-    titulo: Sistemas mudam durante o desenvolvimento
-    topicos:
-      - Cliente solicita novas funcionalidades
-      - Regras existentes são alteradas
-      - Novos usuários e atores podem surgir
-    destaque: Uma mudança de requisito pode afetar todos os modelos.
-
-  - tipo: conteudo
-    titulo: Análise de impacto
-    topicos:
-      - "Mudança: Alunos podem solicitar reservas"
-      - "Impactos: novo requisito, novo ator, novo caso de uso"
-      - Uma única frase modifica vários modelos
-
-  - tipo: divisoria
-    titulo: Consistência entre modelos
-
-  - tipo: conteudo
-    titulo: Tudo deve contar a mesma história
-    topicos:
-      - "Fluxo: Requisitos - Atores - Casos de Uso - Atividades - Classes"
-      - Todos representam o mesmo sistema, pontos de vista diferentes
-      - Se algo muda, verificar os outros modelos
-    destaque: Modelos inconsistentes levam a programação errada.
-
-  - tipo: conteudo
-    titulo: Checklist de consistência
-    topicos:
-      - "Requisito menciona aluno? Aluno é ator?"
-      - "Novo caso de uso está no diagrama?"
-      - "O fluxo de atividade contempla o novo requisito?"
-      - "As classes precisam de novos atributos?"
-
-  - tipo: conteudo
-    titulo: Perguntas fundamentais para modelagem
-    topicos:
-      - "O que o sistema precisa fazer? Quem utiliza?"
-      - "Como cada processo acontece?"
-      - "Quais informações devem existir e como se relacionam?"
-
-  - tipo: conteudo
-    titulo: A pergunta final
-    topicos:
-      - "Se algo mudar, quais modelos serão afetados?"
-      - Responder significa entender realmente o sistema
-      - Capacita para lidar com mudanças futuras
-
-  - tipo: conteudo
-    titulo: Por que modelar?
-    topicos:
-      - Compreender o problema antes de programar
-      - Organizar ideias e encontrar erros
-      - Comunicar a solução claramente
-    destaque: "Quanto melhor entendemos o problema, menor a chance de errar."
-
-  - tipo: encerramento
+- layout: topicos
+  secao: Diagrama de Classes
+  titulo: O que é uma classe?
+  itens:
+  - icone: check_circle
+    titulo: Representa um elemento importante do domínio
+  - icone: lightbulb
+    titulo: Possui
+    texto: atributos (características) e métodos (comportamentos)
+  - icone: task_alt
+    titulo: Exemplo
+    texto: Professor - matricula, nome, email, reservar()
+- layout: topicos
+  secao: Diagrama de Classes
+  titulo: Classe versus Objeto
+  itens:
+  - icone: check_circle
+    titulo: Classe
+    texto: o modelo (ex. Professor)
+  - icone: lightbulb
+    titulo: Objeto
+    texto: ocorrência concreta (ex. Professor Carlos, mat. 12345)
+  - icone: task_alt
+    titulo: Analogia
+    texto: classe é molde, objeto é algo criado com o molde
+- layout: topicos
+  secao: Diagrama de Classes
+  titulo: Atributos e Métodos
+  itens:
+  - icone: check_circle
+    titulo: Atributos
+    texto: informações armazenadas
+  - icone: lightbulb
+    titulo: Métodos
+    texto: ações ou comportamentos
+  - icone: task_alt
+    titulo: Pergunta
+    texto: que informações guardar? Que ações realizar?
+- layout: topicos
+  secao: Relacionamentos
+  titulo: Classes não vivem isoladas
+  itens:
+  - icone: check_circle
+    titulo: Elementos do sistema possuem relações
+  - icone: lightbulb
+    titulo: Perguntas
+    texto: Professor pode fazer reservas? Quantas?
+  - icone: task_alt
+    titulo: Multiplicidade descreve essas relações quantitativamente
+- layout: topicos
+  secao: Multiplicidade
+  titulo: O que significa?
+  itens:
+  - icone: check_circle
+    titulo: '1'
+    texto: exatamente um
+  - icone: lightbulb
+    titulo: 0..1
+    texto: nenhum ou um
+  - icone: task_alt
+    titulo: 0..* ou *
+    texto: nenhum ou vários
+- layout: topicos
+  secao: Multiplicidade
+  titulo: Leitura de multiplicidades
+  itens:
+  - icone: check_circle
+    titulo: Professor 1 - 0..* Reserva
+  - icone: lightbulb
+    titulo: Professor pode ter nenhuma ou várias reservas
+  - icone: task_alt
+    titulo: Cada reserva pertence a exatamente um professor
+  destaque: 'A pergunta correta é: quantos podem estar relacionados a UM?.'
+- layout: topicos
+  secao: Mudanças de Requisitos
+  titulo: Sistemas mudam durante o desenvolvimento
+  itens:
+  - icone: check_circle
+    titulo: Cliente solicita novas funcionalidades
+  - icone: lightbulb
+    titulo: Regras existentes são alteradas
+  - icone: task_alt
+    titulo: Novos usuários e atores podem surgir
+  destaque: Uma mudança de requisito pode afetar todos os modelos.
+- layout: topicos
+  secao: Mudanças de Requisitos
+  titulo: Análise de impacto
+  itens:
+  - icone: check_circle
+    titulo: Mudança
+    texto: Alunos podem solicitar reservas
+  - icone: lightbulb
+    titulo: Impactos
+    texto: novo requisito, novo ator, novo caso de uso
+  - icone: task_alt
+    titulo: Uma única frase modifica vários modelos
+- layout: topicos
+  secao: Consistência entre modelos
+  titulo: Tudo deve contar a mesma história
+  itens:
+  - icone: check_circle
+    titulo: Fluxo
+    texto: Requisitos - Atores - Casos de Uso - Atividades - Classes
+  - icone: lightbulb
+    titulo: Todos representam o mesmo sistema, pontos de vista diferentes
+  - icone: task_alt
+    titulo: Se algo muda, verificar os outros modelos
+  destaque: Modelos inconsistentes levam a programação errada.
+- layout: topicos
+  secao: Consistência entre modelos
+  titulo: Checklist de consistência
+  itens:
+  - icone: check_circle
+    titulo: Requisito menciona aluno? Aluno é ator?
+  - icone: lightbulb
+    titulo: Novo caso de uso está no diagrama?
+  - icone: task_alt
+    titulo: O fluxo de atividade contempla o novo requisito?
+  - icone: info
+    titulo: As classes precisam de novos atributos?
+- layout: topicos
+  secao: Consistência entre modelos
+  titulo: Perguntas fundamentais para modelagem
+  itens:
+  - icone: check_circle
+    titulo: O que o sistema precisa fazer? Quem utiliza?
+  - icone: lightbulb
+    titulo: Como cada processo acontece?
+  - icone: task_alt
+    titulo: Quais informações devem existir e como se relacionam?
+- layout: topicos
+  secao: Consistência entre modelos
+  titulo: A pergunta final
+  itens:
+  - icone: check_circle
+    titulo: Se algo mudar, quais modelos serão afetados?
+  - icone: lightbulb
+    titulo: Responder significa entender realmente o sistema
+  - icone: task_alt
+    titulo: Capacita para lidar com mudanças futuras
+- layout: topicos
+  secao: Consistência entre modelos
+  titulo: Por que modelar?
+  itens:
+  - icone: check_circle
+    titulo: Compreender o problema antes de programar
+  - icone: lightbulb
+    titulo: Organizar ideias e encontrar erros
+  - icone: task_alt
+    titulo: Comunicar a solução claramente
+  destaque: Quanto melhor entendemos o problema, menor a chance de errar.

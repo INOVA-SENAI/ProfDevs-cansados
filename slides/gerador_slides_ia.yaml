@@ -1,0 +1,41 @@
+nome: Gerador de Slides SENAI com IA
+titulo: Slides de aula no padrão SENAI gerados com IA
+slides:
+- layout: ilustracao
+  titulo: Como o gerador funciona
+  itens:
+  - icone: check_circle
+    titulo: A IA escreve só o conteúdo da aula em um deck YAML, sem código nem desenho
+  - icone: lightbulb
+    titulo: O validador confere o tamanho dos textos, a ordem dos slides e os campos antes de gerar
+  - icone: task_alt
+    titulo: A biblioteca senai_slides desenha cada slide com a logo, as cores e a fonte oficiais
+  - icone: info
+    titulo: O resultado sai em PNG, um por slide, e em um PDF pronto para projetar
+  - icone: star
+    titulo: Funciona no Kiro, com a skill gerador-slides, ou colando o prompt em qualquer IA de chat
+  imagem: a friendly robot typing on a laptop on a wooden desk, next to a big screen showing a presentation slide
+- layout: ilustracao
+  titulo: Ilustrações geradas por IA
+  itens:
+  - icone: check_circle
+    titulo: Cada slide de conteúdo traz uma descrição curta da imagem, escrita em inglês
+  - icone: lightbulb
+    titulo: A Amazon Bedrock desenha a cena com o modelo Style Guide, da Stability AI
+  - icone: task_alt
+    titulo: O código aplica a grade de pixels e a paleta, e a imagem entra numa moldura fixa
+  - icone: info
+    titulo: Cada imagem custa cerca de US$ 0,07 e fica em cache para não ser cobrada de novo
+  imagem: a robot painter holding a brush in front of an easel with a colorful landscape painting of mountains and
+    a small house
+- layout: ilustracao
+  titulo: Segurança e cuidados no uso
+  itens:
+  - icone: check_circle
+    titulo: A chave da AWS fica só no arquivo .env, que nunca vai para o repositório
+  - icone: lightbulb
+    titulo: O caça-segredos acusa chaves da AWS e da Bedrock esquecidas nos arquivos
+  - icone: task_alt
+    titulo: Sem credencial, a opção --sem-imagens gera os slides só com texto e sem custo
+  destaque: A IA escreve, o código desenha e o professor revisa cada slide.
+  imagem: a large steel safe with a golden key and a glowing blue shield in front of it

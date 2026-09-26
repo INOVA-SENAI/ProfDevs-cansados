@@ -1,0 +1,117 @@
+nome: Assistente das Apostilas - Proposta
+titulo: Assistente das Apostilas - Proposta de Projeto
+secoes:
+- nome: O Problema
+- nome: Beneficios
+- nome: Plano Piloto
+slides:
+- layout: topicos
+  secao: O Problema
+  titulo: Desafios atuais na preparação de material didático
+  itens:
+  - icone: check_circle
+    titulo: Material genérico ou desatualizado não atende especificidades da turma
+  - icone: lightbulb
+    titulo: Preparação de apostilas consome [__] horas por semestre do professor
+  - icone: task_alt
+    titulo: Cada turma tem ritmo e nível de dificuldade diferentes
+  destaque: Professores precisam de mais tempo para inovação e menos para produção de material.
+- layout: topicos
+  secao: O Problema
+  titulo: Impacto para alunos e instituição
+  itens:
+  - icone: check_circle
+    titulo: Alunos precisam de material de estudo adequado ao seu nível
+  - icone: lightbulb
+    titulo: Falta de referências estruturadas afeta aprendizado
+  - icone: task_alt
+    titulo: Inconsistência pedagógica entre turmas
+- layout: topicos
+  secao: O Problema
+  titulo: O Assistente das Apostilas
+  itens:
+  - icone: check_circle
+    titulo: Aplicativo que gera apostilas em PDF usando inteligência artificial
+  - icone: lightbulb
+    titulo: Capa, objetivos, conteúdo, exercícios, resumo e referências
+  - icone: task_alt
+    titulo: Professor revisa antes de disponibilizar aos alunos
+  destaque: Automatizar a criação sem eliminar o controle pedagógico do professor.
+- layout: topicos
+  secao: O Problema
+  titulo: Segurança e conformidade
+  itens:
+  - icone: check_circle
+    titulo: Aviso
+    texto: apostila gerada com apoio de IA
+  - icone: lightbulb
+    titulo: Conteúdo original com fontes citadas (direitos autorais)
+  - icone: task_alt
+    titulo: Sem dados pessoais de alunos (compliance LGPD)
+- layout: topicos
+  secao: Beneficios
+  titulo: Para o professor
+  itens:
+  - icone: check_circle
+    titulo: Redução de [__] horas/semestre em preparo de material
+  - icone: lightbulb
+    titulo: Foco em revisão pedagógica em vez de redação
+  - icone: task_alt
+    titulo: Mais tempo para inovação em sala de aula
+- layout: topicos
+  secao: Beneficios
+  titulo: Para os alunos
+  itens:
+  - icone: check_circle
+    titulo: Apostilas personalizadas por turma e nível de dificuldade
+  - icone: lightbulb
+    titulo: Material padronizado visualmente e pedagogicamente
+  - icone: task_alt
+    titulo: Conteúdo sempre alinhado ao plano de curso
+  - icone: info
+    titulo: Mais autonomia de estudo e revisão
+- layout: topicos
+  secao: Beneficios
+  titulo: Para a instituição
+  itens:
+  - icone: check_circle
+    titulo: Padronização de qualidade e estilo visual SENAI
+  - icone: lightbulb
+    titulo: Diferencial competitivo no mercado
+  - icone: task_alt
+    titulo: Dados para melhoria contínua de cursos
+- layout: topicos
+  secao: Plano Piloto
+  titulo: Escopo do piloto
+  itens:
+  - icone: check_circle
+    titulo: Uma turma do Técnico em Desenvolvimento de Sistemas
+  - icone: lightbulb
+    titulo: Duração
+    texto: '[__] semestres'
+  - icone: task_alt
+    titulo: Geração de [__] apostilas durante o período
+- layout: topicos
+  secao: Plano Piloto
+  titulo: Métricas a coletar
+  itens:
+  - icone: check_circle
+    titulo: Tempo economizado pelo professor (horas)
+  - icone: lightbulb
+    titulo: Quantidade de apostilas geradas e revisadas
+  - icone: task_alt
+    titulo: Satisfação dos alunos com o material
+  - icone: info
+    titulo: Taxa de uso e feedback qualitativo
+- layout: topicos
+  secao: Plano Piloto
+  titulo: Próximos passos
+  itens:
+  - icone: check_circle
+    titulo: Aprovação da proposta pela gestão
+  - icone: lightbulb
+    titulo: Especificação técnica e arquitetura do app
+  - icone: task_alt
+    titulo: Desenvolvimento da versão piloto
+  - icone: info
+    titulo: Coleta de dados e análise de resultados

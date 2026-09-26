@@ -1,0 +1,53 @@
+nome: Assistente das Apostilas - Proposta Executiva
+titulo: Assistente das Apostilas - Proposta Executiva
+slides:
+- layout: topicos
+  titulo: O Problema
+  itens:
+  - icone: check_circle
+    titulo: Material didático genérico ou desatualizado
+  - icone: lightbulb
+    titulo: Professor gasta [__] horas/semestre em preparação de apostilas
+  - icone: task_alt
+    titulo: Cada turma tem ritmo e nível de dificuldade diferentes
+  destaque: Necessidade de material personalizado e tempo do professor otimizado.
+- layout: topicos
+  titulo: A Solucao
+  itens:
+  - icone: check_circle
+    titulo: App que gera apostilas em PDF com IA
+  - icone: lightbulb
+    titulo: Professor define
+    texto: tema, dificuldade, curso e tamanho
+  - icone: task_alt
+    titulo: Estrutura
+    texto: capa, objetivos, conteúdo, exercícios, resumo
+  - icone: info
+    titulo: Revisão obrigatória do professor antes de disponibilizar
+- layout: topicos
+  titulo: Beneficios
+  itens:
+  - icone: check_circle
+    titulo: Professor
+    texto: economia de [__] horas, foco em inovação
+  - icone: lightbulb
+    titulo: Alunos
+    texto: apostilas personalizadas, mais autonomia de estudo
+  - icone: task_alt
+    titulo: Instituição
+    texto: padronização visual e pedagógica, diferencial competitivo
+  destaque: Conformidade garantida - LGPD, direitos autorais, aviso de IA.
+- layout: topicos
+  titulo: Plano Piloto e Proximos Passos
+  itens:
+  - icone: check_circle
+    titulo: Piloto
+    texto: uma turma Técnico em Desenvolvimento de Sistemas
+  - icone: lightbulb
+    titulo: Métricas
+    texto: tempo economizado, satisfação de alunos
+  - icone: task_alt
+    titulo: Fases
+    texto: aprovação → desenvolvimento → coleta de dados
+  - icone: info
+    titulo: Decisão de expansão baseada em resultados

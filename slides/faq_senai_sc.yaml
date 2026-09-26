@@ -1,37 +1,42 @@
 nome: FAQ SENAI Santa Catarina
-
+titulo: Sistema de Dúvidas Frequentes - FAQ
+secoes:
+- nome: O que é FAQ?
+- nome: Usando o FAQ
 slides:
-  - tipo: capa
-    titulo: Sistema de Dúvidas Frequentes - FAQ
-
-  - tipo: divisoria
-    titulo: O que é FAQ?
-
-  - tipo: conteudo
-    titulo: Conceito e benefícios
-    topicos:
-      - "FAQ significa: Frequently Asked Questions"
-      - Centraliza as dúvidas mais comuns dos alunos
-      - Acesso rápido a respostas sem aguardar atendimento
-      - Reduz repetição de perguntas iguais
-
-  - tipo: conteudo
-    titulo: Como funciona o FAQ do SENAI
-    topicos:
-      - Base de dados com perguntas organizadas por categorias
-      - Buscador rápido por palavra-chave
-      - Respostas claras e objetivas
-    destaque: Menos tempo esperando, mais tempo aprendendo.
-
-  - tipo: divisoria
-    titulo: Usando o FAQ
-
-  - tipo: conteudo
-    titulo: Passo a passo
-    topicos:
-      - Acesse o portal do SENAI Santa Catarina
-      - Procure pela seção "Dúvidas Frequentes" ou "FAQ"
-      - Digite sua pergunta no buscador ou navegue por categoria
-      - Leia a resposta e consulte links relacionados se necessário
-
-  - tipo: encerramento
+- layout: topicos
+  secao: O que é FAQ?
+  titulo: Conceito e benefícios
+  itens:
+  - icone: check_circle
+    titulo: FAQ significa
+    texto: Frequently Asked Questions
+  - icone: lightbulb
+    titulo: Centraliza as dúvidas mais comuns dos alunos
+  - icone: task_alt
+    titulo: Acesso rápido a respostas sem aguardar atendimento
+  - icone: info
+    titulo: Reduz repetição de perguntas iguais
+- layout: topicos
+  secao: O que é FAQ?
+  titulo: Como funciona o FAQ do SENAI
+  itens:
+  - icone: check_circle
+    titulo: Base de dados com perguntas organizadas por categorias
+  - icone: lightbulb
+    titulo: Buscador rápido por palavra-chave
+  - icone: task_alt
+    titulo: Respostas claras e objetivas
+  destaque: Menos tempo esperando, mais tempo aprendendo.
+- layout: topicos
+  secao: Usando o FAQ
+  titulo: Passo a passo
+  itens:
+  - icone: check_circle
+    titulo: Acesse o portal do SENAI Santa Catarina
+  - icone: lightbulb
+    titulo: Procure pela seção "Dúvidas Frequentes" ou "FAQ"
+  - icone: task_alt
+    titulo: Digite sua pergunta no buscador ou navegue por categoria
+  - icone: info
+    titulo: Leia a resposta e consulte links relacionados se necessário

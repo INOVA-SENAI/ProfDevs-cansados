@@ -89,6 +89,7 @@ def _caca_segredos():
 # Montadas em partes para este arquivo não disparar o próprio caça-segredos.
 CHAVE_FALSA = "AKIA" + "ABCDEFGHIJKLMNOP"
 SEGREDO_FALSO = "aws_" + "secret_access_key = abc123"
+BEDROCK = "AWS_BEARER_TOKEN_" + "BEDROCK"
 
 
 @pytest.mark.parametrize(
@@ -96,6 +97,8 @@ SEGREDO_FALSO = "aws_" + "secret_access_key = abc123"
     [
         (f"chave = '{CHAVE_FALSA}'\n", 1),
         (f"linha 1\n{SEGREDO_FALSO}\n", 1),
+        (f"{BEDROCK}={'ABSK' + 'x1y2z3' * 8}\n", 1),
+        (f"# {BEDROCK}=\nAWS_REGION=us-east-1\n", 0),
         ("Hook que busca por AKIA e aws_secret no código.\n", 0),
         ("nome: Aula\n", 0),
     ],

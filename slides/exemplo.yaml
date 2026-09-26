@@ -1,51 +1,143 @@
 nome: NR-10 Introducao
+titulo: Segurança em Instalações Elétricas
+subtitulo: Introdução à NR-10
+uc: Instalações Elétricas
+modo: resumido
+tags: [NR-10, segurança, eletricidade]
+imagem:
+  gerar: an electrician locking a circuit breaker with a red safety padlock in an industrial electrical room
+
+secoes:
+  - nome: Riscos elétricos
+    descricao: O que pode acontecer e onde o perigo aparece
+  - nome: Medidas de controle
+    descricao: Como a NR-10 protege quem trabalha com eletricidade
 
 slides:
-  - tipo: capa
-    titulo: Segurança em Instalações Elétricas
-
-  - tipo: divisoria
-    titulo: Riscos elétricos
-
-  - tipo: conteudo
+  - layout: cartoes
+    secao: Riscos elétricos
     titulo: Principais riscos da eletricidade
-    topicos:
-      - "Choque elétrico: corrente passando pelo corpo"
-      - "Arco elétrico: calor intenso que causa queimaduras graves"
-      - Incêndios por sobrecarga ou curto-circuito
+    subtitulo: Três riscos que todo eletricista precisa conhecer
+    itens:
+      - icone: electric_bolt
+        titulo: Choque elétrico
+        texto: Corrente passando pelo corpo, que pode causar parada cardíaca.
+      - icone: local_fire_department
+        titulo: Arco elétrico
+        texto: Descarga com calor intenso, que causa queimaduras graves.
+      - icone: warning
+        titulo: Incêndio
+        texto: Sobrecarga ou curto-circuito podem iniciar um incêndio.
+    notas: Apresente os três riscos e peça exemplos que a turma já viu.
+
+  - layout: ilustracao
+    secao: Riscos elétricos
+    titulo: Onde o risco aparece
+    itens:
+      - icone: electrical_services
+        titulo: Painéis e quadros energizados
+        texto: Partes vivas expostas durante manutenção ou inspeção.
+      - icone: cable
+        titulo: Cabos e emendas danificados
+        texto: Isolação gasta ou emendas malfeitas deixam o condutor exposto.
+      - icone: power
+        titulo: Equipamentos sem aterramento
+        texto: A carcaça pode ficar energizada sem que ninguém perceba.
+    imagem:
+      foto: circuit breaker panel
+    notas: Mostre situações do dia a dia da oficina em que esses riscos aparecem.
+
+  - layout: destaque
+    secao: Riscos elétricos
+    titulo: Regra de ouro
     destaque: Todo circuito deve ser tratado como energizado até prova em contrário.
+    notas: Reforce que a ausência de tensão só vale depois de testada.
 
-  - tipo: divisoria
-    titulo: Medidas de controle
-
-  - tipo: conteudo
-    titulo: Medidas coletivas
-    topicos:
-      - Desenergização do circuito antes do serviço
-      - Aterramento e equipotencialização
-      - Sinalização e isolamento da área
-
-  - tipo: diagrama
+  - layout: diagrama
+    secao: Medidas de controle
     titulo: Etapas da desenergização
     itens:
-      - titulo: Seccionamento
+      - icone: power_off
+        titulo: Seccionamento
         texto: Desligar e abrir o circuito com um dispositivo de manobra adequado.
-      - titulo: Impedimento
+      - icone: lock
+        titulo: Impedimento
         texto: Bloquear e travar o dispositivo para ninguém religar o circuito.
-      - titulo: Ausência de tensão
+      - icone: electric_meter
+        titulo: Ausência de tensão
         texto: Testar com detector de tensão antes de tocar no circuito.
-      - titulo: Aterramento
+      - icone: foundation
+        titulo: Aterramento
         texto: Instalar o aterramento temporário com equipotencialização.
-      - titulo: Proteção
+      - icone: shield
+        titulo: Proteção
         texto: Proteger as partes energizadas que ficam na zona controlada.
-      - titulo: Sinalização
+      - icone: warning
+        titulo: Sinalização
         texto: Sinalizar no local o impedimento de reenergização.
+    notas: Siga a ordem das etapas; cada uma depende da anterior.
 
-  - tipo: conteudo
-    titulo: Medidas individuais
-    topicos:
-      - Uso de EPIs adequados à classe de tensão
-      - Vestimenta antichama
-      - Ferramentas isoladas e inspecionadas
+  - layout: comparacao
+    secao: Medidas de controle
+    titulo: Medidas coletivas e individuais
+    colunas:
+      - titulo: Coletivas
+        itens:
+          - Desenergização do circuito antes do serviço
+          - Aterramento e equipotencialização
+          - Sinalização e isolamento da área
+      - titulo: Individuais
+        itens:
+          - EPIs adequados à classe de tensão
+          - Vestimenta adequada à atividade
+          - Ferramentas isoladas e inspecionadas
+    destaque: As medidas coletivas vêm primeiro; o EPI completa a proteção.
+    notas: Explique a prioridade das medidas coletivas sobre as individuais.
 
-  - tipo: encerramento
+  - layout: ilustracao
+    secao: Medidas de controle
+    titulo: Proteção individual
+    itens:
+      - icone: health_and_safety
+        titulo: Capacete e protetor facial
+        texto: Protegem cabeça e rosto contra impactos e arco elétrico.
+      - icone: front_hand
+        titulo: Luvas isolantes
+        texto: Escolhidas de acordo com a classe de tensão do serviço.
+      - icone: checklist
+        titulo: Inspeção antes do uso
+        texto: EPI danificado não protege e deve ser substituído.
+    imagem:
+      gerar: an electrician wearing a safety helmet, face shield and insulated rubber gloves working on an electrical panel
+    notas: Se possível, leve EPIs reais para a turma manusear.
+
+  - layout: tabela
+    secao: Medidas de controle
+    titulo: Quem pode trabalhar com eletricidade
+    subtitulo: Definições da NR-10
+    tabela:
+      cabecalho: [Profissional, Como a NR-10 define]
+      linhas:
+        - [Qualificado, Concluiu curso específico reconhecido pelo sistema oficial de ensino]
+        - [Habilitado, Qualificado e com registro no conselho de classe]
+        - [Capacitado, Treinado sob orientação de profissional habilitado e autorizado]
+        - [Autorizado, Qualificado ou capacitado com anuência formal da empresa]
+    notas: Diferencie os quatro perfis com exemplos da própria turma.
+
+  - layout: numeros
+    secao: Medidas de controle
+    titulo: Treinamento obrigatório
+    itens:
+      - icone: school
+        valor: 40 h
+        titulo: Curso básico
+        texto: Para quem trabalha com instalações elétricas.
+      - icone: engineering
+        valor: 40 h
+        titulo: Curso complementar
+        texto: Para quem atua no Sistema Elétrico de Potência (SEP).
+      - icone: event_repeat
+        valor: 2 anos
+        titulo: Reciclagem
+        texto: O treinamento é repetido a cada dois anos.
+    notas: Confira com a turma as cargas horárias no Anexo da NR-10.

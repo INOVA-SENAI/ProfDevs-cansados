@@ -1,0 +1,87 @@
+nome: Assistente das Apostilas - Gestão
+titulo: 'Assistente das Apostilas: proposta de projeto'
+slides:
+- layout: ilustracao
+  titulo: O problema que queremos resolver
+  itens:
+  - icone: check_circle
+    titulo: Material de apoio muitas vezes é genérico ou desatualizado para a turma
+  - icone: lightbulb
+    titulo: Preparar uma apostila completa consome muitas horas do professor
+  - icone: task_alt
+    titulo: Cada turma tem dificuldades e ritmos de aprendizagem diferentes
+  - icone: info
+    titulo: Os alunos precisam de material de estudo e revisão adequado ao seu nível
+  imagem: a tired teacher at a desk late at night, surrounded by tall piles of paper and old books under a desk
+    lamp
+- layout: diagrama
+  titulo: Assistente das Apostilas
+  itens:
+  - icone: check_circle
+    titulo: Pedido da apostila
+    texto: O professor ou o aluno escolhe tema, nível, curso e tamanho.
+  - icone: lightbulb
+    titulo: Geração com IA
+    texto: A inteligência artificial monta a apostila completa em PDF.
+  - icone: task_alt
+    titulo: Revisão docente
+    texto: O professor valida o conteúdo e corrige possíveis erros da IA.
+  - icone: info
+    titulo: Alinhamento MSEP
+    texto: O conteúdo é ajustado ao plano de curso da metodologia SENAI.
+  - icone: star
+    titulo: Entrega à turma
+    texto: A apostila revisada é liberada com o aviso de apoio de IA.
+  - icone: flag
+    titulo: Estudo e revisão
+    texto: Os alunos estudam e revisam no seu nível e no seu ritmo.
+- layout: ilustracao
+  titulo: O que cada apostila traz
+  itens:
+  - icone: check_circle
+    titulo: Capa e objetivos de aprendizagem definidos para o curso e o nível escolhidos
+  - icone: lightbulb
+    titulo: Explicação do conteúdo com exemplos, no nível de dificuldade da turma
+  - icone: task_alt
+    titulo: Exercícios com gabarito, para o aluno praticar e conferir sozinho
+  - icone: info
+    titulo: Resumo para revisão rápida e referências com as fontes citadas
+  - icone: star
+    titulo: Mesmo padrão visual e pedagógico em todas as apostilas
+  imagem: a teacher at a desk comparing a tall stack of old paper handouts with a laptop that shows a colorful new
+    study booklet
+- layout: diagrama
+  titulo: Ganhos e cuidados
+  itens:
+  - icone: check_circle
+    titulo: Menos preparo
+    texto: Menos horas do professor montando material de apoio do zero.
+  - icone: lightbulb
+    titulo: Personalização
+    texto: Apostilas sob medida para cada turma, curso e nível de dificuldade.
+  - icone: task_alt
+    titulo: Autonomia do aluno
+    texto: Material de estudo e revisão sempre à mão, no nível de cada aluno.
+  - icone: info
+    titulo: Revisão obrigatória
+    texto: Nenhuma apostila chega aos alunos sem a validação do professor.
+  - icone: star
+    titulo: Direitos autorais
+    texto: Conteúdo original, com as fontes citadas nas referências.
+  - icone: flag
+    titulo: LGPD e transparência
+    texto: Nenhum dado pessoal de aluno e aviso de conteúdo gerado com IA.
+- layout: ilustracao
+  titulo: Piloto e pedido de aprovação
+  itens:
+  - icone: check_circle
+    titulo: Piloto com a turma [__] do SENAI Fraiburgo, durante [__] semanas
+  - icone: lightbulb
+    titulo: Tempo de preparo economizado
+    texto: '[__] horas (a medir no piloto)'
+  - icone: task_alt
+    titulo: Apostilas geradas
+    texto: '[__] e satisfação dos alunos: [__] (a medir)'
+  destaque: Pedimos a aprovação do desenvolvimento e do piloto do Assistente das Apostilas.
+  imagem: students in a bright computer classroom reading colorful printed study booklets together while their teacher
+    smiles

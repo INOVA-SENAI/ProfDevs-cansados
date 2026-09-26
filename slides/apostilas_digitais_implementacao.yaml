@@ -1,0 +1,165 @@
+nome: Apostilas Digitais em Aula
+titulo: 'Apostilas digitais em aula: como implementar'
+slides:
+- layout: ilustracao
+  titulo: Por que levar a apostila para o digital
+  itens:
+  - icone: check_circle
+    titulo: Material sempre atualizado, sem esperar uma nova impressão
+  - icone: lightbulb
+    titulo: Acesso no celular, no notebook ou no laboratório, em aula e em casa
+  - icone: task_alt
+    titulo: Conteúdo personalizado por turma e nível com o Assistente das Apostilas
+  destaque: A apostila digital acompanha o ritmo da turma, e não o da gráfica.
+  imagem: students in a classroom using tablets and laptops to read a colorful digital study booklet
+- layout: ilustracao
+  titulo: Como é a apostila digital
+  itens:
+  - icone: check_circle
+    titulo: PDF gerado pelo Assistente das Apostilas e revisado pelo professor
+  - icone: lightbulb
+    titulo: Sumário navegável e links para vídeos, simuladores e referências
+  - icone: task_alt
+    titulo: Exercícios com gabarito ao fim de cada capítulo, para estudo autônomo
+  - icone: info
+    titulo: Arquivo leve, que abre no celular e pode ser baixado para ler sem internet
+  - icone: star
+    titulo: Versão para impressão para quem não tiver dispositivo
+  imagem: a tablet showing the open pages of a digital book, leaning against a stack of paper books on a school
+    desk
+- layout: diagrama
+  titulo: Etapas da implementação
+  itens:
+  - icone: check_circle
+    titulo: Diagnóstico
+    texto: Levantar turmas, dispositivos, rede e necessidades dos professores.
+  - icone: lightbulb
+    titulo: Planejamento
+    texto: Definir turma piloto, unidades curriculares e cronograma.
+  - icone: task_alt
+    titulo: Produção
+    texto: Gerar as apostilas com o Assistente e revisar com o professor.
+  - icone: info
+    titulo: Formação docente
+    texto: Oficina de uso do Assistente e do roteiro de revisão.
+  - icone: star
+    titulo: Aplicação em aula
+    texto: Usar a apostila digital nas situações de aprendizagem da turma.
+  - icone: flag
+    titulo: Avaliação
+    texto: Medir resultados, ouvir alunos e ajustar antes de expandir.
+- layout: ilustracao
+  titulo: Infraestrutura necessária
+  itens:
+  - icone: check_circle
+    titulo: Laboratório de informática, notebooks da unidade ou celulares dos alunos
+  - icone: lightbulb
+    titulo: Rede Wi-Fi com capacidade para a turma inteira acessar ao mesmo tempo
+  - icone: task_alt
+    titulo: Ambiente virtual de aprendizagem (AVA) da unidade para publicar as apostilas
+  - icone: info
+    titulo: Pasta compartilhada para os professores guardarem as versões revisadas
+  - icone: star
+    titulo: Leitor de PDF instalado nos computadores do laboratório
+  imagem: a bright modern computer lab with rows of computers and a wifi router on the wall
+- layout: ilustracao
+  titulo: A apostila no dia a dia da aula
+  itens:
+  - icone: check_circle
+    titulo: Antes da aula
+    texto: o aluno lê o capítulo e chega com as dúvidas anotadas
+  - icone: lightbulb
+    titulo: Durante a aula
+    texto: o professor usa a apostila na situação de aprendizagem
+  - icone: task_alt
+    titulo: Depois da aula
+    texto: exercícios com gabarito e resumo para revisar o conteúdo
+  - icone: info
+    titulo: Recuperação
+    texto: o aluno volta aos capítulos em que teve mais dificuldade
+  imagem: a teacher in front of a projector screen showing a digital booklet page while students follow along on
+    laptops
+- layout: diagrama
+  titulo: Papéis na implementação
+  itens:
+  - icone: check_circle
+    titulo: Professor
+    texto: Revisa as apostilas, aplica em aula e acompanha a turma.
+  - icone: lightbulb
+    titulo: Aluno
+    texto: Estuda pela apostila digital e dá retorno sobre o material.
+  - icone: task_alt
+    titulo: Coordenação
+    texto: Alinha as apostilas ao plano de curso e à metodologia MSEP.
+  - icone: info
+    titulo: Equipe de TI
+    texto: Garante rede, dispositivos e acesso ao ambiente virtual.
+  - icone: star
+    titulo: Assistente de IA
+    texto: Gera o rascunho da apostila a partir do tema e do nível.
+  - icone: flag
+    titulo: Gestão
+    texto: Aprova o piloto, acompanha os indicadores e decide a expansão.
+- layout: ilustracao
+  titulo: Formação dos professores
+  itens:
+  - icone: check_circle
+    titulo: Oficina prática de uso do Assistente das Apostilas, com [__] horas de duração
+  - icone: lightbulb
+    titulo: Roteiro de revisão para conferir conteúdo, fontes e alinhamento ao plano de curso
+  - icone: task_alt
+    titulo: Boas práticas de uso de IA na educação, com limites e responsabilidades
+  - icone: info
+    titulo: Troca de apostilas revisadas entre os professores da mesma área
+  imagem: a group of teachers around a table with laptops in a workshop while one teacher presents on a screen
+- layout: ilustracao
+  titulo: Cuidados e governança
+  itens:
+  - icone: check_circle
+    titulo: Nenhuma apostila é publicada sem a revisão e a aprovação do professor
+  - icone: lightbulb
+    titulo: Conteúdo original, com fontes citadas, respeitando os direitos autorais
+  - icone: task_alt
+    titulo: Nenhum dado pessoal de aluno no Assistente, em respeito à LGPD
+  - icone: info
+    titulo: Aviso de apoio de IA, data e versão na capa de cada apostila
+  - icone: star
+    titulo: Acessibilidade
+    texto: fonte legível, bom contraste e versão impressa se necessário
+  imagem: a big glowing shield protecting a laptop and a stack of digital documents
+- layout: diagrama
+  titulo: Indicadores do piloto
+  itens:
+  - icone: check_circle
+    titulo: Tempo de preparo
+    texto: 'Horas economizadas por apostila: [__] (a medir).'
+  - icone: lightbulb
+    titulo: Apostilas publicadas
+    texto: 'Apostilas revisadas e publicadas no piloto: [__].'
+  - icone: task_alt
+    titulo: Acesso dos alunos
+    texto: 'Alunos que abriram a apostila toda semana: [__].'
+  - icone: info
+    titulo: Satisfação
+    texto: 'Satisfação dos alunos com o material: [__].'
+  - icone: star
+    titulo: Aprendizagem
+    texto: 'Desempenho da turma nas avaliações, antes e depois: [__].'
+  - icone: flag
+    titulo: Impressão evitada
+    texto: 'Páginas que deixaram de ser impressas: [__].'
+- layout: ilustracao
+  titulo: Cronograma e próximos passos
+  itens:
+  - icone: check_circle
+    titulo: Mês [__]
+    texto: diagnóstico da unidade e escolha da turma piloto
+  - icone: lightbulb
+    titulo: Mês [__]
+    texto: produção das apostilas e formação dos professores
+  - icone: task_alt
+    titulo: Mês [__]
+    texto: aplicação em aula, coleta dos indicadores e decisão de expansão
+  destaque: Com a aprovação, o piloto começa em [__] com a turma [__].
+  imagem: a winding path through green hills with three colored milestone flags leading to a golden trophy at the
+    end

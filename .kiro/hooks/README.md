@@ -6,8 +6,8 @@ Hooks executam uma ação automaticamente quando um evento acontece no IDE. Cada
 
 | Arquivo | Gatilho | Ação | Objetivo |
 |---|---|---|---|
-| `validar-slides.json` | `FileSave` em `slides/*.yaml` ou `slides/*.yml` | `python -m senai_slides.validador slides/ --gerar` | Salvou o deck, validou e gerou os slides |
-| `caca-segredos.json` | `PostTaskExecution` | `python scripts/caca_segredos.py` | Nenhuma chave da AWS no repositório |
+| `validar-slides.json` | `FileSave` em `slides/*.yaml` ou `slides/*.yml` | `python -m senai_slides.validador slides/ --gerar` | Salvou o deck, validou e gerou a apresentação (`.pptx`, prévias e PDF) de todos os decks sem erro da pasta, com a estimativa de imagens e custo de cada um. Não cobra nada: entram as fotos reais (grátis) e as imagens que já estão no cache; as imagens por IA novas só são criadas rodando o validador com `--aceitar-custo`, depois de o professor aprovar o custo. Tempo limite de 300 s, para dar tempo de buscar as fotos |
+| `caca-segredos.json` | `PostTaskExecution` | `python scripts/caca_segredos.py` | Nenhuma chave da AWS nem da Bedrock no repositório |
 
 Os comandos usam o `python` do terminal do Kiro: deixe o `venv` do projeto selecionado como interpretador.
 

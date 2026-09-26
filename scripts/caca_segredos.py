@@ -1,4 +1,4 @@
-"""Procura chaves da AWS nos arquivos do repositório. Sai com código 1 se achar alguma.
+"""Procura chaves da AWS (e da Bedrock) nos arquivos do repositório. Sai com código 1 se achar.
 
 Uso:
     python scripts/caca_segredos.py              arquivos versionados e novos (fora do .gitignore)
@@ -13,6 +13,11 @@ from pathlib import Path
 PADROES = {
     "chave de acesso da AWS (AKIA/ASIA)": re.compile(r"\b(?:AKIA|ASIA)[0-9A-Z]{16}\b"),
     "segredo da AWS (aws_secret...)": re.compile(r"aws_secret\w*\s*[=:]\s*\S+", re.IGNORECASE),
+    # A chave da Bedrock fica só no .env, que está no .gitignore. A linha comentada e vazia do
+    # .env.example não conta: o valor precisa ter cara de chave.
+    "chave da Bedrock (AWS_BEARER_TOKEN_BEDROCK)": re.compile(
+        r"AWS_BEARER_TOKEN_BEDROCK[ \t]*[=:][ \t]*[\"']?[A-Za-z0-9+/=_.-]{20,}"
+    ),
 }
 
 

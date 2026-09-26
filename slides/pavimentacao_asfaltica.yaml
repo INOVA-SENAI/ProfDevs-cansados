@@ -1,0 +1,132 @@
+nome: Pavimentação Asfáltica
+titulo: 'Pavimentação asfáltica: do material à manutenção'
+slides:
+- layout: ilustracao
+  titulo: O que é o asfalto
+  itens:
+  - icone: check_circle
+    titulo: Material escuro derivado do petróleo, que une e impermeabiliza
+  - icone: lightbulb
+    titulo: Na obra, o ligante usado é o CAP
+    texto: cimento asfáltico de petróleo
+  - icone: task_alt
+    titulo: Misturado a agregados (brita, pedrisco e areia), forma o revestimento da via
+  - icone: info
+    titulo: É flexível e acomoda pequenas deformações, ao contrário do concreto
+  - icone: star
+    titulo: Também é usado como emulsão (em água) ou asfalto diluído (em solvente)
+  imagem: a freshly paved black asphalt road with light steam rising, curving through green fields under a clear
+    sky
+- layout: ilustracao
+  titulo: Tipos de revestimento asfáltico
+  itens:
+  - icone: check_circle
+    titulo: CBUQ
+    texto: concreto betuminoso usinado a quente, muito usado em rodovias e ruas
+  - icone: lightbulb
+    titulo: PMF
+    texto: pré-misturado a frio, feito com emulsão e comum em reparos
+  - icone: task_alt
+    titulo: Tratamento superficial
+    texto: camadas de ligante e brita aplicadas na própria pista
+  - icone: info
+    titulo: Microrrevestimento
+    texto: camada fina para renovar a superfície de pistas existentes
+  imagem: an asphalt plant with tall silos and a conveyor belt loading hot asphalt mix into a dump truck
+- layout: ilustracao
+  titulo: Camadas do pavimento
+  itens:
+  - icone: check_circle
+    titulo: Revestimento
+    texto: camada asfáltica que recebe o tráfego e protege contra a água
+  - icone: lightbulb
+    titulo: Base
+    texto: distribui as cargas das rodas, em geral feita de brita graduada
+  - icone: task_alt
+    titulo: Sub-base
+    texto: complementa a base quando o solo é fraco ou o tráfego é pesado
+  - icone: info
+    titulo: Reforço do subleito
+    texto: melhora o solo natural quando for necessário
+  - icone: star
+    titulo: Subleito
+    texto: o solo de fundação, compactado, onde todo o pavimento se apoia
+  imagem: a cross section of a road showing a black asphalt layer on top of gravel, crushed stone and brown soil
+    layers
+- layout: diagrama
+  titulo: Etapas da execução
+  itens:
+  - icone: check_circle
+    titulo: Preparo da base
+    texto: Base limpa, nivelada e compactada, conforme o projeto.
+  - icone: lightbulb
+    titulo: Imprimação
+    texto: Ligante sobre a base granular para impermeabilizar e dar aderência.
+  - icone: task_alt
+    titulo: Pintura de ligação
+    texto: Emulsão que cola a nova camada à camada asfáltica de baixo.
+  - icone: info
+    titulo: Transporte
+    texto: O caminhão traz a massa quente da usina, coberta com lona.
+  - icone: star
+    titulo: Espalhamento
+    texto: A vibroacabadora distribui a massa na espessura do projeto.
+  - icone: flag
+    titulo: Compactação
+    texto: Rolos de pneus e rolo liso dão densidade e acabamento.
+- layout: ilustracao
+  titulo: Controle de qualidade
+  itens:
+  - icone: check_circle
+    titulo: Temperatura da massa conferida na chegada do caminhão e no espalhamento
+  - icone: lightbulb
+    titulo: Espessura da camada e grau de compactação verificados conforme o projeto
+  - icone: task_alt
+    titulo: Superfície sem ondulações, segregação ou falhas de acabamento
+  destaque: 'Massa fria demais não compacta: a temperatura decide a qualidade.'
+  imagem: a road worker in a reflective vest measuring the temperature of fresh hot asphalt with a handheld thermometer
+- layout: diagrama
+  titulo: Defeitos mais comuns
+  itens:
+  - icone: check_circle
+    titulo: Couro de jacaré
+    texto: Trincas interligadas, causadas pela fadiga do revestimento.
+  - icone: lightbulb
+    titulo: Afundamento
+    texto: Trilha de roda afundada por excesso de carga ou base fraca.
+  - icone: task_alt
+    titulo: Panela
+    texto: Buraco que surge quando a água entra pelas trincas.
+  - icone: info
+    titulo: Exsudação
+    texto: Excesso de ligante que sobe e deixa a pista brilhante e lisa.
+  - icone: star
+    titulo: Desagregação
+    texto: Perda dos agregados da superfície, que fica áspera e solta.
+  - icone: flag
+    titulo: Ondulação
+    texto: Ondas na superfície, comuns em trechos de frenagem.
+- layout: ilustracao
+  titulo: Manutenção e conservação
+  itens:
+  - icone: check_circle
+    titulo: Selagem das trincas logo no início, antes que a água chegue à base
+  - icone: lightbulb
+    titulo: Remendo bem feito
+    texto: corte, limpeza, pintura de ligação e compactação
+  - icone: task_alt
+    titulo: Fresagem e recapeamento quando o revestimento chega ao fim da vida útil
+  destaque: 'A água é a principal inimiga do pavimento: drenagem em dia evita buracos.'
+  imagem: a road milling machine removing an old cracked asphalt layer while a truck collects the debris
+- layout: ilustracao
+  titulo: Segurança e meio ambiente na obra
+  itens:
+  - icone: check_circle
+    titulo: Massa em alta temperatura traz risco de queimaduras e de exposição a fumos
+  - icone: lightbulb
+    titulo: 'EPIs: luvas, botina, roupa de manga longa, colete refletivo e protetor auricular'
+  - icone: task_alt
+    titulo: Sinalização e desvio do tráfego antes de começar o serviço
+  - icone: info
+    titulo: Descarte correto dos resíduos e reaproveitamento do material fresado
+  imagem: road workers in orange reflective vests and helmets spreading hot asphalt behind a row of traffic cones

@@ -1,114 +1,154 @@
 nome: Levantamento de Requisitos
-
+titulo: Levantamento de Requisitos e Análise
+secoes:
+- nome: O que são requisitos?
+- nome: Tipos de requisitos
+- nome: Atores
+- nome: Casos de Uso
+- nome: Diagrama de Atividades
 slides:
-  - tipo: capa
-    titulo: Levantamento de Requisitos e Análise
-
-  - tipo: divisoria
-    titulo: O que são requisitos?
-
-  - tipo: conteudo
-    titulo: Conceito e propósito
-    topicos:
-      - Representam aquilo que o sistema precisa atender
-      - Respondem perguntas sobre funcionalidades, usuários e regras
-      - Evitam retrabalho e erros na programação
-    destaque: Um sistema bem desenvolvido começa com um problema bem entendido.
-
-  - tipo: conteudo
-    titulo: Transformando ideias em requisitos
-    topicos:
-      - "Ideia: Professor precisa reservar um laboratório"
-      - "Requisito: O sistema deve permitir reserva de laboratórios"
-      - Requisitos guiam o desenvolvimento
-
-  - tipo: divisoria
-    titulo: Tipos de requisitos
-
-  - tipo: conteudo
-    titulo: Requisito Funcional
-    topicos:
-      - Descreve uma função ou ação do sistema
-      - "Verbos: cadastrar, consultar, alterar, excluir, reservar"
-      - "Pergunta: O que o sistema precisa fazer?"
-
-  - tipo: conteudo
-    titulo: Requisito Não Funcional
-    topicos:
-      - Descreve qualidades do sistema
-      - "Envolve: desempenho, segurança, compatibilidade"
-      - "Exemplo: responder em 3 segundos, funcionar em celulares"
-
-  - tipo: conteudo
-    titulo: Regra de Negócio
-    topicos:
-      - Regra da organização que deve ser respeitada
-      - Define condições e limites
-      - "Exemplo: máximo 3 reservas por aluno, não haver conflito de horário"
-
-  - tipo: divisoria
+- layout: topicos
+  secao: O que são requisitos?
+  titulo: Conceito e propósito
+  itens:
+  - icone: check_circle
+    titulo: Representam aquilo que o sistema precisa atender
+  - icone: lightbulb
+    titulo: Respondem perguntas sobre funcionalidades, usuários e regras
+  - icone: task_alt
+    titulo: Evitam retrabalho e erros na programação
+  destaque: Um sistema bem desenvolvido começa com um problema bem entendido.
+- layout: topicos
+  secao: O que são requisitos?
+  titulo: Transformando ideias em requisitos
+  itens:
+  - icone: check_circle
+    titulo: Ideia
+    texto: Professor precisa reservar um laboratório
+  - icone: lightbulb
+    titulo: Requisito
+    texto: O sistema deve permitir reserva de laboratórios
+  - icone: task_alt
+    titulo: Requisitos guiam o desenvolvimento
+- layout: topicos
+  secao: Tipos de requisitos
+  titulo: Requisito Funcional
+  itens:
+  - icone: check_circle
+    titulo: Descreve uma função ou ação do sistema
+  - icone: lightbulb
+    titulo: Verbos
+    texto: cadastrar, consultar, alterar, excluir, reservar
+  - icone: task_alt
+    titulo: Pergunta
+    texto: O que o sistema precisa fazer?
+- layout: topicos
+  secao: Tipos de requisitos
+  titulo: Requisito Não Funcional
+  itens:
+  - icone: check_circle
+    titulo: Descreve qualidades do sistema
+  - icone: lightbulb
+    titulo: Envolve
+    texto: desempenho, segurança, compatibilidade
+  - icone: task_alt
+    titulo: Exemplo
+    texto: responder em 3 segundos, funcionar em celulares
+- layout: topicos
+  secao: Tipos de requisitos
+  titulo: Regra de Negócio
+  itens:
+  - icone: check_circle
+    titulo: Regra da organização que deve ser respeitada
+  - icone: lightbulb
+    titulo: Define condições e limites
+  - icone: task_alt
+    titulo: Exemplo
+    texto: máximo 3 reservas por aluno, não haver conflito de horário
+- layout: topicos
+  secao: Atores
+  titulo: O que é um ator?
+  itens:
+  - icone: check_circle
+    titulo: Quem ou o que interage com o sistema
+  - icone: lightbulb
+    titulo: Pode ser
+    texto: pessoa, outro sistema, serviço externo
+  - icone: task_alt
+    titulo: Deve existir interação com o sistema
+- layout: topicos
+  secao: Atores
+  titulo: Ator versus Elemento do Sistema
+  itens:
+  - icone: check_circle
     titulo: Atores
-
-  - tipo: conteudo
-    titulo: O que é um ator?
-    topicos:
-      - Quem ou o que interage com o sistema
-      - "Pode ser: pessoa, outro sistema, serviço externo"
-      - Deve existir interação com o sistema
-
-  - tipo: conteudo
-    titulo: Ator versus Elemento do Sistema
-    topicos:
-      - "Atores: Professor, Coordenador, Sistema de autenticação"
-      - "Não são atores: Laboratório, Reserva, Banco de dados"
-      - "Regra: ator interage com o sistema"
-
-  - tipo: divisoria
-    titulo: Casos de Uso
-
-  - tipo: conteudo
-    titulo: Definição e propósito
-    topicos:
-      - Funcionalidade oferecida para um ator
-      - "Descreve: quem usa, o que deseja, que serviço oferece"
-      - "Exemplos: Professor realiza Reserva, Coordenador cancela Reserva"
-
-  - tipo: conteudo
-    titulo: Componentes do diagrama
-    topicos:
-      - "Ator - pessoa estilizada"
-      - "Caso de uso - elipse"
-      - "Associação - linha ligando ator e funcionalidade"
-
-  - tipo: conteudo
-    titulo: Relação include
-    topicos:
-      - Comportamento obrigatório sempre executado
-      - "Exemplo: Realizar Reserva sempre verifica disponibilidade"
-      - "Include - reutilização obrigatória"
-
-  - tipo: divisoria
-    titulo: Diagrama de Atividades
-
-  - tipo: conteudo
-    titulo: Propósito e utilidade
-    topicos:
-      - Representa um processo passo a passo
-      - Visualiza sequência, decisões, caminhos alternativos
-      - Essencial para compreender fluxos complexos
-
-  - tipo: conteudo
-    titulo: Principais elementos
-    topicos:
-      - "Início - marca o começo do processo"
-      - "Atividade - representa uma ação"
-      - "Fluxo - mostra a sequência"
-
-  - tipo: conteudo
-    titulo: Decisões e caminhos
-    topicos:
-      - "Decisão - quando o fluxo segue caminhos diferentes"
-      - "Principal - processo acontece normalmente"
-      - "Alternativo ou exceção - casos especiais"
-
-  - tipo: encerramento
+    texto: Professor, Coordenador, Sistema de autenticação
+  - icone: lightbulb
+    titulo: Não são atores
+    texto: Laboratório, Reserva, Banco de dados
+  - icone: task_alt
+    titulo: Regra
+    texto: ator interage com o sistema
+- layout: topicos
+  secao: Casos de Uso
+  titulo: Definição e propósito
+  itens:
+  - icone: check_circle
+    titulo: Funcionalidade oferecida para um ator
+  - icone: lightbulb
+    titulo: Descreve
+    texto: quem usa, o que deseja, que serviço oferece
+  - icone: task_alt
+    titulo: Exemplos
+    texto: Professor realiza Reserva, Coordenador cancela Reserva
+- layout: topicos
+  secao: Casos de Uso
+  titulo: Componentes do diagrama
+  itens:
+  - icone: check_circle
+    titulo: Ator - pessoa estilizada
+  - icone: lightbulb
+    titulo: Caso de uso - elipse
+  - icone: task_alt
+    titulo: Associação - linha ligando ator e funcionalidade
+- layout: topicos
+  secao: Casos de Uso
+  titulo: Relação include
+  itens:
+  - icone: check_circle
+    titulo: Comportamento obrigatório sempre executado
+  - icone: lightbulb
+    titulo: Exemplo
+    texto: Realizar Reserva sempre verifica disponibilidade
+  - icone: task_alt
+    titulo: Include - reutilização obrigatória
+- layout: topicos
+  secao: Diagrama de Atividades
+  titulo: Propósito e utilidade
+  itens:
+  - icone: check_circle
+    titulo: Representa um processo passo a passo
+  - icone: lightbulb
+    titulo: Visualiza sequência, decisões, caminhos alternativos
+  - icone: task_alt
+    titulo: Essencial para compreender fluxos complexos
+- layout: topicos
+  secao: Diagrama de Atividades
+  titulo: Principais elementos
+  itens:
+  - icone: check_circle
+    titulo: Início - marca o começo do processo
+  - icone: lightbulb
+    titulo: Atividade - representa uma ação
+  - icone: task_alt
+    titulo: Fluxo - mostra a sequência
+- layout: topicos
+  secao: Diagrama de Atividades
+  titulo: Decisões e caminhos
+  itens:
+  - icone: check_circle
+    titulo: Decisão - quando o fluxo segue caminhos diferentes
+  - icone: lightbulb
+    titulo: Principal - processo acontece normalmente
+  - icone: task_alt
+    titulo: Alternativo ou exceção - casos especiais

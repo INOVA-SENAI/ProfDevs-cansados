@@ -9,7 +9,7 @@
         "type": "command",
         "command": "python -m senai_slides.validador slides/ --gerar"
       },
-      "timeout": 120
+      "timeout": 300
     }
   ]
 }
